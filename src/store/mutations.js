@@ -6,7 +6,7 @@ export default {
     state.userId = info._id
     state.isLogin = true
     state.userInfo = info
-    $utils.setStorage('xxxUserId', info._id)
+    $utils.setStorage($types.STORAGE_USER_ID, info._id)
   },
 
   [$types.GET_USERINFO] (state, info) {
