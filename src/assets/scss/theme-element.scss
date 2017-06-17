@@ -1,0 +1,27 @@
+.sidenav {
+  .el-submenu__title:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+  .el-menu-item.is-active,
+  .el-menu-item:hover {
+    color: $blue;
+    .icon {
+      color: $blue;
+    }
+  }
+  .el-submenu .el-menu {}
+  .el-submenu .el-menu-item:hover {
+    color: $blue;
+  }
+}
+
+.el-dropdown-menu {
+  min-width: 150px;
+  .icons {
+    vertical-align: middle;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0 .5em .3em .1em;
+  }
+}
