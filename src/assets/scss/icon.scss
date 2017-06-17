@@ -1,0 +1,26 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: -3px;
+  fill: currentColor;
+  overflow: hidden;
+  color: #fff;
+}
+
+.sidenav {
+  .icon {
+    color: lighten($black, 20%);
+  }
+  a {
+    &:hover {
+      .icon {
+        color: $blue;
+      }
+    }
+  }
+  .active {
+    .icon {
+      color: $blue;
+    }
+  }
+}
