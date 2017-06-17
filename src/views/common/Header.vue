@@ -62,6 +62,8 @@ export default {
     onLogoutClick () {
       this.$apis.user.logout().then(result => {
         Cookies.remove('isLogin')
+
+        this.$utils.removeStorage(this.$types.STORAGE_USER_ID)
         this.$router.push('/login')
       }).catch((err) => {
         this.$router.push('/')
