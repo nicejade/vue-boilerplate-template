@@ -1,30 +1,38 @@
-# pps-fe
+<h1 align="center"><strong>vue-boilerplate-template</strong></h1>
 
-> A Project For PPS Based On Vue2.0
+A Nice Boilerplate Template for creating medium plus Vue.js projects.
 
-## Build Setup
+## Goal and Philosophy
 
-``` bash
-# install dependencies
-npm install
+For how to build medium-sized (+) VUE projects, provide some reference based on past experience.
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Prerequisites
 
-# build for production with minification
-npm run build
+[Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
 
-# build for production and view the bundle analyzer report
-npm run build --report
+## Usage
 
-# run unit tests
-npm run unit
+>git clone https://github.com/nicejade/vue-boilerplate-template (your-project-name)
+cd your-project-name
+npm install (npm i / yarn)
+npm run dev /  npm start
 
-# run e2e tests
-npm run e2e
+## Dependent plugin list
 
-# run all tests
-npm test
-```
+- vue2
+- vue-router
+- vuex
+- vue-i18n
+- element-ui
+- bootstrap
+- lodash
+- moment
+- superagent
+- js-cookie
+- ... ...
+
+## Writing
+
+See the example in the template.
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
