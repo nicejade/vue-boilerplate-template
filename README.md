@@ -12,10 +12,12 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 
 ## Usage
 
->git clone https://github.com/nicejade/vue-boilerplate-template (your-project-name)
+```
+git clone https://github.com/nicejade/vue-boilerplate-template (your-project-name)
 cd your-project-name
 npm install (npm i / yarn)
 npm run dev /  npm start
+```
 
 ## Dependent plugin list
 
