@@ -7,7 +7,6 @@ import locales from './locales'
 import 'element-ui/lib/theme-default/index.css'
 import Icon from '@components/Icon/index.js'
 import { $apis, $utils, $document, $auth } from '@helper'
-import $types from '@store/types'
 
 Vue.use(VueI18n)
 Vue.use(ElementUI)
@@ -31,4 +30,3 @@ Vue.prototype.$apis = $apis
 Vue.prototype.$utils = $utils
 Vue.prototype.$auth = $auth
 Vue.prototype.$document = $document
-Vue.prototype.$types = $types

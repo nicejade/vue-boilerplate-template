@@ -63,7 +63,7 @@ export default {
       this.$apis.user.logout().then(result => {
         Cookies.remove('isLogin')
 
-        this.$utils.removeStorage(this.$types.STORAGE_USER_ID)
+        this.$store.commit('$vuexSetUserInfo', {})
         this.$router.push('/login')
       }).catch((err) => {
         this.$router.push('/')
