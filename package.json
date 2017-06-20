@@ -38,7 +38,8 @@
     "vue": "^2.2.2",
     "vue-i18n": "^5.0.3",
     "vue-router": "^2.2.0",
-    "vuex": "^2.1.2"
+    "vuex": "^2.1.2",
+    "vuex-persistedstate": "^1.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
