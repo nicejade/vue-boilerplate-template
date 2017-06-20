@@ -66,6 +66,7 @@
             this.isLoading = true
             this.$apis.user.login(postData).then((result) => {
               // Here U can Call the method to get updated to your user information
+              // this.$store.commit('$vuexSetUserInfo')
               this.$router.push('/')
             }).catch((err) => {
               this.$message.error(err.msg)
