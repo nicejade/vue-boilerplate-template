@@ -7,6 +7,10 @@ body,
 
 .page-module {
   padding: 0 0 20px 0;
+  position: absolute;
+  left: $sidenav-width;
+  top: $header-height;
+  width: calc(100% - 200px);
 }
 
 .module-header {
@@ -39,12 +43,14 @@ body,
 }
 
 .sidenav {
+  position: absolute;
+  left: 0;
   height: 100%;
   min-height: 100%;
   left: 0;
   top: 0;
   z-index: 8;
-  width: 200px;
+  width: $sidenav-width;
   min-width: 200px;
   background-color: #48576a;
   a {
@@ -80,6 +86,8 @@ body,
 @media (max-width:768px) {
   .page-module {
     padding: 0;
+    left: 0;
+    width: 100%;
   }
   .module-content {
     padding: 5px;

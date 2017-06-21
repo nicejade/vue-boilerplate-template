@@ -1,5 +1,5 @@
 <template>
-  <section class="page-module page-demo">
+  <section class="page-module">
     <div class="module-header">
       <h3>列表示例</h3>
     </div>
@@ -15,13 +15,19 @@
             <el-table-column prop="zip" label="邮编" width="120"></el-table-column>
             <el-table-column label="操作" width="140">
               <template scope="scope">
-                <el-button @click="onShowClick" type="text" size="small">查看</el-button>
-                <el-button @click="onEditClick" type="text" size="small" icon="edit">编辑</el-button>
+                <el-button @click="onShowClick" size="small">查看</el-button>
+                <el-button @click="onEditClick" type="primary" size="small">编辑</el-button>
               </template>
             </el-table-column>
           </el-table>
           <div class="table-operate">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[20, 50, 100]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="currentPage"
+              :page-sizes="[20, 50, 100]"
+              :page-size="100" layout="total, sizes, prev, pager, next, jumper"
+              :total="400">
             </el-pagination>
           </div>
         </div>
