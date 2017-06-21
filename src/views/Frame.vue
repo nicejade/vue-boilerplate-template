@@ -3,7 +3,7 @@
     <header-component></header-component>
     <div class="frame-content">
       <side-nav></side-nav>
-      <main>
+      <main @click="onHideMenuClick">
         <router-view></router-view>
       </main>
     </div>
@@ -15,19 +15,27 @@ import HeaderComponent from './common/Header'
 
 export default{
   name: 'Frame',
+
   props: {
   },
+
   data () {
     return {
     }
   },
+
   created () {
   },
+
   components: {
     SideNav,
     HeaderComponent
   },
+
   methods: {
+    onHideMenuClick () {
+      document.getElementById('app').className = ''
+    }
   }
 }
 </script>
