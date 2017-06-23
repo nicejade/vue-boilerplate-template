@@ -48,7 +48,7 @@ body,
   height: 100%;
   min-height: 100%;
   left: 0;
-  top: 0;
+  top: $header-height;
   z-index: 8;
   width: $sidenav-width;
   min-width: 200px;
