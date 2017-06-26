@@ -31,6 +31,7 @@ npm run dev /  npm start
 - moment
 - superagent
 - js-cookie
+- vuex-persistedstate
 - ... ...
 
 ## Writing
