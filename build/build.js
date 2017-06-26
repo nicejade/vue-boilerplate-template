@@ -1,6 +1,7 @@
 require('./check-versions')()
+require('shelljs/global')
 
-process.env.NODE_ENV = 'production'
+env.NODE_ENV = process.env.NODE_ENV || 'production'
 
 var ora = require('ora')
 var rm = require('rimraf')
