@@ -1,5 +1,5 @@
 <template>
-  <section class="page-module page-demo">
+  <section class="page-module">
     <div class="module-header">
       <h3>列表示例</h3>
     </div>
@@ -13,29 +13,41 @@
             <el-table-column prop="city" label="市区" width="120"></el-table-column>
             <el-table-column prop="address" label="地址"></el-table-column>
             <el-table-column prop="zip" label="邮编" width="120"></el-table-column>
-            <el-table-column label="操作" width="140">
+            <el-table-column label="操作" width="100">
               <template scope="scope">
-                <el-button @click="onShowClick" type="text" size="small">查看</el-button>
-                <el-button @click="onEditClick" type="text" size="small" icon="edit">编辑</el-button>
+                <el-button @click="onEditClick(scope.row, scope.$index)" type="primary" size="small">编辑</el-button>
               </template>
             </el-table-column>
           </el-table>
           <div class="table-operate">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[20, 50, 100]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="currentPage"
+              :page-sizes="[20, 50, 100]"
+              :page-size="100" layout="total, sizes, prev, pager, next, jumper"
+              :total="400">
             </el-pagination>
           </div>
         </div>
       </div>
+      <edit-dialog
+        :pdata="currentRowData"
+        v-model="isDialogVisible"
+        @dispatch-data="onUpdateRowData"></edit-dialog>
     </div>
   </section>
 </template>
 
 <script>
+import EditDialog from './EditDialog'
+
 export default {
   name: 'demo-list',
-  components: {},
+
   props: {
   },
+
   data () {
     return {
       currentPage: 1,
@@ -67,8 +79,15 @@ export default {
         city: '普陀区',
         address: '上海市普陀区金沙江路 1518 弄',
         zip: 200333
-      }]
+      }],
+      isDialogVisible: false,
+      currentRowData: {},
+      currentRowIndex: -1
     }
+  },
+
+  components: {
+    EditDialog
   },
 
   computed: {},
@@ -93,11 +112,16 @@ export default {
       console.log(`当前页: ${val}`)
     },
 
-    /* ----------------------------On Click Event---------------------------- */
-    onShowClick () {
+    onUpdateRowData (data) {
+      this.currentRowData = data
+      this.$set(this.tableData, this.currentRowIndex, data)
     },
 
-    onEditClick () {
+    /* ----------------------------On Click Event---------------------------- */
+    onEditClick (rowData, index) {
+      this.currentRowData = rowData
+      this.currentRowIndex = index
+      this.isDialogVisible = true
     }
   }
 }

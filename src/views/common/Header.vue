@@ -63,7 +63,7 @@ export default {
       this.$apis.user.logout().then(result => {
         Cookies.remove('isLogin')
 
-        this.$utils.removeStorage(this.$types.STORAGE_USER_ID)
+        this.$store.commit('$vuexSetUserInfo', {})
         this.$router.push('/login')
       }).catch((err) => {
         this.$router.push('/')
@@ -85,9 +85,10 @@ export default {
 @import './../../assets/scss/mixins.scss';
 
 #app .header {
-  position: relative;
+  position: fixed;
   z-index: 9;
-  height: 60px;
+  height: $header-height;
+  width: 100%;
   min-width: 320px;
   background-color: $blue;
   @include clearfix();
@@ -197,14 +198,15 @@ export default {
 }
 
 @media (max-width:768px) {
-  .header {
+  #app .header {
     .menu {
       display: block;
     }
     .logo {
-      padding-left: 75px;
       text-align: center;
-
+      @include absolute-center;
+      float: none;
+      padding: 0;
       img {
         margin-right: 5px;
       }
