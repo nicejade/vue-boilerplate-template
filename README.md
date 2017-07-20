@@ -74,14 +74,14 @@ this.$apis.getProfile(params).then(result => {
 })
 ```
 
+So considerate, Template has been helped to handle the request uniformly, so you can be so easy to use, of course, you can change your own as needed in the `helper/ajax.js` file .
+
 ## Links
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
 - [Blog](http://jeffjade.com)
 - [Twitter](https://twitter.com/jeffjade2)
 - [Facebook](https://www.facebook.com/yang.gang.jade)
 - [Weibo](http://weibo.com/jeffjade)
-
-So considerate, Template has been helped to handle the request uniformly, so you can be so easy to use, of course, you can change your own as needed in the `helper/ajax.js` file .
 
 ## Writing
 
