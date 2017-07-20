@@ -7,13 +7,13 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="活动名称" prop="name">
                 <el-input v-model="ruleForm.name"></el-input>
               </el-form-item>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="活动区域" prop="region">
                 <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
                   <el-option label="区域一" value="shanghai"></el-option>
@@ -22,7 +22,7 @@
               </el-form-item>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="活动时间" required>
                 <el-col :span="11">
                   <el-form-item prop="date1">
@@ -32,13 +32,13 @@
               </el-form-item>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="即时配送" prop="delivery">
                 <el-switch on-text="" off-text="" v-model="ruleForm.delivery"></el-switch>
               </el-form-item>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="活动性质" prop="type">
                 <el-checkbox-group v-model="ruleForm.type">
                   <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
@@ -49,7 +49,7 @@
               </el-form-item>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="特殊资源" prop="resource">
                 <el-radio-group v-model="ruleForm.resource">
                   <el-radio label="线上品牌商赞助"></el-radio>
@@ -58,13 +58,13 @@
               </el-form-item>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-6">
               <el-form-item label="活动形式" prop="desc">
                 <el-input type="textarea" v-model="ruleForm.desc"></el-input>
               </el-form-item>
             </div>
           </el-form>
-          <div class="form-group col-sm-4">
+          <div class="form-group col-sm-6">
             <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
             <el-button @click="resetForm('ruleForm')">重置</el-button>
           </div>
