@@ -27,6 +27,7 @@
     }
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-polyfill": "^6.20.0",
     "bootstrap": "^4.0.0-alpha.6",
     "element-ui": "^1.2.2",
@@ -34,7 +35,6 @@
     "lodash": "^4.17.4",
     "moment": "^2.16.0",
     "q": "^1.4.1",
-    "superagent": "^3.0.0",
     "vue": "^2.2.2",
     "vue-i18n": "^5.0.3",
     "vue-router": "^2.2.0",
