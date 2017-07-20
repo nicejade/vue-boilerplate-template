@@ -9,7 +9,7 @@ module.exports = {
       'lodash',
       'moment',
       'q',
-      'superagent',
+      'axios',
       'vue/dist/vue.common.js',
       'vue-i18n',
       'vue-router',
