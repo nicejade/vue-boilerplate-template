@@ -7,9 +7,31 @@
     <meta name="keywords" content="Vue;Boilerplate;Template;Webpack;Vue-Router;Vuex;">
     <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icons/favicon-16x16.png">
+    <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
+    <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue-Boilerplate-Template">
+    <link rel="apple-touch-icon" href="/static/img/icons/apple-touch-icon-152x152.png">
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="/static/img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <% for (var chunk of webpack.chunks) {
+      for (var file of chunk.files) {
+        if (file.match(/\.(js|css)$/)) { %>
+    <link rel="<%= chunk.initial ? 'preload' : 'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+    <% }}} %>
   </head>
 
   <body>
+    <noscript>
+      This is your fallback content in case JavaScript fails to load.
+    </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
     <script  src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js"></script>
