@@ -16,7 +16,7 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 git clone https://github.com/nicejade/vue-boilerplate-template (your-project-name)
 cd your-project-name
 npm install (npm i / yarn)
-npm run dev /  npm start
+npm start / npm run dev / yarn run dev
 ```
 
 Go to http://localhost:8080/. If port 8080 is already in use on your machine you must change the port number in `/config/index.js`. Otherwise npm run dev will fail. Of course, you can temporarily replace the port using the following command:
@@ -27,6 +27,28 @@ PORT=8888 npm run dev
 
 >**Additional supplement**： You need to make sure that PORT is a command that can be executed on your machine .
 
+<details>
+<summary>More Command</summary>
+
+```
+npm run build
+```
+Equivalent execution `node build.js`, initiate a build project
+
+```
+npm run build:dll
+```
+Equivalent execution `webpack --config build/webpack.dll.conf.js`, For more information see [webpack.DllPlugin](https://webpack.js.org/plugins/dll-plugin/).
+
+```
+npm run analyz
+```
+
+Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap. 
+
+![webpack-bundle-analyzer](https://cloud.githubusercontent.com/assets/302213/20628702/93f72404-b338-11e6-92d4-9a365550a701.gif)
+
+</details>
 
 ## Dependent plugin list
 
