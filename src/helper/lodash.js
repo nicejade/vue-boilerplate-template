@@ -5,7 +5,6 @@
     https://www.npmjs.com/package/lodash-webpack-plugin
     https://www.npmjs.com/package/babel-plugin-lodash
 */
-
 import _ from 'lodash'
 
 export default {
