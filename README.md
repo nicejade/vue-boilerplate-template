@@ -33,7 +33,7 @@ PORT=8888 npm run dev
 ```
 npm run build
 ```
-Equivalent execution `node build.js`, initiate a build project
+Equivalent execution `node build.js`, initiate a build project .
 
 ```
 npm run build:dll
@@ -44,7 +44,7 @@ Equivalent execution `webpack --config build/webpack.dll.conf.js`, For more info
 npm run analyz
 ```
 
-Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap. 
+Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap. It will automatically open this address：http://localhost:8888/ .
 
 ![webpack-bundle-analyzer](https://cloud.githubusercontent.com/assets/302213/20628702/93f72404-b338-11e6-92d4-9a365550a701.gif)
 
