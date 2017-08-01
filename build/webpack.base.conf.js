@@ -5,7 +5,6 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var svgoConfig = require('../config/svgo-config.json')
-
 var ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 function resolve (dir) {
