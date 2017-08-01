@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import _ from 'lodash'
+import _ from '@helper/lodash.js'
 import Router from 'vue-router'
 import beforeEachHooks from './beforeEachHooks'
 import RoutesMapConfig from './routes'
