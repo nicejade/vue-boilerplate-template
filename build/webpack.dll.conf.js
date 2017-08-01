@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     vendor: [
+      'babel-polyfill',
       'js-cookie',
       'moment',
       'q',
