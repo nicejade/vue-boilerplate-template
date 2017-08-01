@@ -12,7 +12,8 @@ module.exports = {
       'vue/dist/vue.common.js',
       'vue-i18n',
       'vue-router',
-      'vuex'
+      'vuex',
+      'vuex-persistedstate'
     ]
   },
   output: {
@@ -34,6 +35,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn|en-gb/),
     new webpack.DllPlugin({
       path: path.join(__dirname, '.', '[name]-manifest.json'),
@@ -45,6 +47,5 @@ module.exports = {
         warnings: false
       }
     })
-    // new webpack.optimize.OccurenceOrderPlugin()
   ]
 }
