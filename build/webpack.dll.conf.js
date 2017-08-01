@@ -6,7 +6,6 @@ module.exports = {
   entry: {
     vendor: [
       'js-cookie',
-      'lodash',
       'moment',
       'q',
       'axios',
