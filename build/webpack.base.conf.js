@@ -39,6 +39,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
+    modules: [
+      resolve('src'),
+      resolve('node_modules')
+    ],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
       '@': resolve('src'),
@@ -55,6 +59,7 @@ module.exports = {
     }
   },
   module: {
+    noParse: /node_modules\/(element-ui\.js)/,
     rules: [
       {
         test: /\.(js|vue)$/,
@@ -87,12 +92,12 @@ module.exports = {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
         loader: 'happypack/loader?id=happysvg',
-        include: /assets\/icons/
+        include: [resolve('src/assets/icons'), resolve('src/assets/images')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
-        exclude: /assets\/icons/,
+        include: [resolve('src/assets/images')],
         query: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
@@ -124,7 +129,7 @@ module.exports = {
         query: {
           loaders: {
             scss: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-            js: 'happypack/loader?id=happybabel'
+            js: 'happypack/loader?id=happyvue'
           }
         }
       }]
