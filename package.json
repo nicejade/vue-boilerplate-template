@@ -116,7 +116,7 @@
     "vue-loader": "^11.0.0",
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.2.1",
-    "webpack": "v3.3.0",
+    "webpack": "v3.5.5",
     "webpack-build-notifier": "^0.1.13",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
