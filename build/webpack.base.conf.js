@@ -14,13 +14,16 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+// inject happypack accelerate packing for vue-loader @17-08-18
+Object.assign(vueLoaderConfig.loaders, {
+  js: 'happypack/loader?id=happybabel-vue'
+})
+
 function createHappyPlugin (id, loaders) {
   return new HappyPack({
     id: id,
     loaders: loaders,
     threadPool: happyThreadPool,
-    // disable happy caching with HAPPY_CACHE=0
-    cache: process.env.HAPPY_CACHE !== '0',
     // make happy more verbose with HAPPY_VERBOSE=1
     verbose: process.env.HAPPY_VERBOSE === '1'
   })
@@ -65,7 +68,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
+        include: [resolve('src')],
         options: {
           formatter: require('eslint-friendly-formatter')
         }
@@ -79,14 +82,14 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        include: [resolve('src'), resolve('test')],
+        include: [resolve('src')],
         options: vueLoaderConfig
       },
       {
         test: /\.js$/,
-        loader: 'happypack/loader?id=happybabel',
+        loader: 'happypack/loader?id=happybabel-vue',
         exclude: /node_modules/,
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src')]
       },
       {
         test: /\.svg$/,
@@ -107,7 +110,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         query: {
-          limit: 10000,
+          limit: 8192,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
@@ -121,18 +124,8 @@ module.exports = {
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json')
     }),
-    createHappyPlugin('happybabel', ['babel-loader?cacheDirectory=true']),
-    createHappyPlugin('happysvg', ['svg-sprite-loader']),
-    new HappyPack({
-      loaders: [{
-        path: 'vue-loader',
-        query: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-            js: 'happypack/loader?id=happyvue'
-          }
-        }
-      }]
-    })
+    createHappyPlugin('happybabel-js', ['babel-loader?cacheDirectory=true']),
+    createHappyPlugin('happybabel-vue', ['babel-loader?cacheDirectory=true']),
+    createHappyPlugin('happysvg', ['svg-sprite-loader'])
   ]
 }
