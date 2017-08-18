@@ -9,14 +9,23 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin')
 var HappyPack = require('happypack')
 var os = require('os')
 var happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+var scssLoader = ExtractTextPlugin.extract({
+  use: [
+    // 'happypack/loader?id=css',
+    'happypack/loader?id=happy-scss'
+  ]
+})
+
 // inject happypack accelerate packing for vue-loader @17-08-18
 Object.assign(vueLoaderConfig.loaders, {
-  js: 'happypack/loader?id=happybabel-vue'
+  js: 'happypack/loader?id=happy-babel-vue'
+  // scss: scssLoader
 })
 
 function createHappyPlugin (id, loaders) {
@@ -87,14 +96,14 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'happypack/loader?id=happybabel-vue',
+        loader: 'happypack/loader?id=happy-babel-js',
         exclude: /node_modules/,
         include: [resolve('src')]
       },
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
-        loader: 'happypack/loader?id=happysvg',
+        loader: 'happypack/loader?id=happy-svg',
         include: [resolve('src/assets/icons'), resolve('src/assets/images')]
       },
       {
@@ -124,8 +133,9 @@ module.exports = {
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json')
     }),
-    createHappyPlugin('happybabel-js', ['babel-loader?cacheDirectory=true']),
-    createHappyPlugin('happybabel-vue', ['babel-loader?cacheDirectory=true']),
-    createHappyPlugin('happysvg', ['svg-sprite-loader'])
+    createHappyPlugin('happy-babel-js', ['babel-loader?cacheDirectory=true']),
+    createHappyPlugin('happy-babel-vue', ['babel-loader?cacheDirectory=true']),
+    // createHappyPlugin('happy-scss', ['sass-loader', 'vue-style-loader']),
+    createHappyPlugin('happy-svg', ['svg-sprite-loader'])
   ]
 }
