@@ -9,7 +9,7 @@
         </el-form-item>
         <el-form-item prop="password">
           <el-input v-model="account.password" type="password"
-            :placeholder="$t('password')" @keydown.enter.native="login">
+            :placeholder="$t('password')" @keydown.enter.native="onLoginClick">
           </el-input>
         </el-form-item>
         <el-button type="primary" size="large"
