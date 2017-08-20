@@ -15,17 +15,16 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-var scssLoader = ExtractTextPlugin.extract({
+var cssLoader = ExtractTextPlugin.extract({
   use: [
-    // 'happypack/loader?id=css',
-    'happypack/loader?id=happy-scss'
+    'happypack/loader?id=happy-css'
   ]
 })
 
 // inject happypack accelerate packing for vue-loader @17-08-18
 Object.assign(vueLoaderConfig.loaders, {
-  js: 'happypack/loader?id=happy-babel-vue'
-  // scss: scssLoader
+  js: 'happypack/loader?id=happy-babel-vue',
+  css: cssLoader
 })
 
 function createHappyPlugin (id, loaders) {
@@ -135,7 +134,18 @@ module.exports = {
     }),
     createHappyPlugin('happy-babel-js', ['babel-loader?cacheDirectory=true']),
     createHappyPlugin('happy-babel-vue', ['babel-loader?cacheDirectory=true']),
-    // createHappyPlugin('happy-scss', ['sass-loader', 'vue-style-loader']),
-    createHappyPlugin('happy-svg', ['svg-sprite-loader'])
+    createHappyPlugin('happy-css', ['css-loader', 'vue-style-loader']),
+    createHappyPlugin('happy-svg', ['svg-sprite-loader']),
+    // https://github.com/amireh/happypack/pull/131
+    new HappyPack({
+      loaders: [{
+        path: 'vue-loader',
+        query: {
+          loaders: {
+            scss: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+          }
+        }
+      }]
+    })
   ]
 }
