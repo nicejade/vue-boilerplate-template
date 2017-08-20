@@ -46,10 +46,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       cacheDir: '.cache/',
       uglifyJS: {
         output: {
-          comments: false
+          comments: false,
+          beautify: false
         },
         compress: {
-          warnings: false
+          warnings: false,
+          drop_console: true
         }
       }
     }),
