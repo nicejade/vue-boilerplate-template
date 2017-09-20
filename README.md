@@ -1,4 +1,6 @@
-<h1 align="center"><strong>vue-boilerplate-template</strong></h1>
+<p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
+
+<h1 align="center"><strong>vue-boilerplate-template (V1.0)</strong></h1>
 
 A Nice Boilerplate Template for creating medium plus Vue.js projects.
 
@@ -106,14 +108,21 @@ this.$apis.getProfile(params).then(result => {
 So considerate, Template has been helped to handle the request uniformly, so you can be so easy to use, of course, you can change your own as needed in the `helper/ajax.js` file .
 
 ## Links
+
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
 - [Blog](http://jeffjade.com)
+- [JianShu](http://www.jianshu.com/u/9aae3d8f4c3d)
+- [Weibo](http://weibo.com/jeffjade)
+- [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
 - [Twitter](https://twitter.com/jeffjade2)
 - [Facebook](https://www.facebook.com/yang.gang.jade)
-- [Weibo](http://weibo.com/jeffjade)
 
 ## Writing
 
 See the example in the boilerplate template.
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017-present, NiceJade.
