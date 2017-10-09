@@ -111,7 +111,6 @@ So considerate, Template has been helped to handle the request uniformly, so you
 
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
 - [Blog](http://jeffjade.com)
-- [JianShu](http://www.jianshu.com/u/9aae3d8f4c3d)
 - [Weibo](http://weibo.com/jeffjade)
 - [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
 - [Twitter](https://twitter.com/jeffjade2)
