@@ -2,7 +2,9 @@
 
 <h1 align="center"><strong>vue-boilerplate-template (V1.0)</strong></h1>
 
-A Nice Boilerplate Template for creating medium plus Vue.js projects.
+A Nice Boilerplate Template for creating medium plus Vue.js projects. 
+
+>`Vue`: "2.2.2"， `webpack`: "v3.5.5".
 
 ## Goal and Philosophy
 
