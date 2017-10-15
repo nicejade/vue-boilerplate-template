@@ -15,8 +15,9 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 [Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
 
 ## Advantage
-- Based on vue-cli build， Make more optimization for how to to facilitate the use of vue .
+- Based on `vue-cli` build， Make more optimization for how to to facilitate the use of vue .
 - Has already included a lot of commonly used libraries， such as `vue-i18n`, `axios`, `lodash` ...
+- With some experience articles about `Vue`, Such as: [如何写一手漂亮的 Vue](https://jeffjade.com/2017/03/11/120-how-to-write-vue-better/). And is still updated.
 - Make more optimization about how to build the application using `WebPack` .
   - [Webpack 打包优化之体积篇](http://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/)
   - [Webpack 打包优化之速度篇](http://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/)
@@ -113,6 +114,7 @@ So considerate, Template has been helped to handle the request uniformly, so you
 
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
 - [Blog](http://jeffjade.com)
+- [Accessorial Blog](https://blog.lovejade.cn/)
 - [Weibo](http://weibo.com/jeffjade)
 - [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
 - [Twitter](https://twitter.com/jeffjade2)
