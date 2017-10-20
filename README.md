@@ -1,6 +1,6 @@
 <p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
 
-<h1 align="center"><strong>vue-boilerplate-template (V1.0)</strong></h1>
+<h1 align="center"><strong>vue-boilerplate-template (V1.1)</strong></h1>
 
 A Nice Boilerplate Template for creating medium plus Vue.js projects. 
 
