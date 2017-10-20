@@ -63,6 +63,7 @@ module.exports = {
       '@views': resolve('src/views'),
       '@pages': resolve('src/views/pages'),
       '@components': resolve('src/components'),
+      '@router': resolve('src/router'),
       '@store': resolve('src/store'),
       '@helper': resolve('src/helper'),
       '@services': resolve('src/services'),

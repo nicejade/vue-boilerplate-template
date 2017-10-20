@@ -13,8 +13,7 @@ module.exports = {
       'vue/dist/vue.common.js',
       'vue-i18n',
       'vue-router',
-      'vuex',
-      'vuex-persistedstate'
+      'vuex'
     ]
   },
   output: {

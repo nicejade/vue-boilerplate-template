@@ -9,9 +9,11 @@
     </div>
   </div>
 </template>
+
 <script>
-import SideNav from './common/SideNav'
-import HeaderComponent from './common/Header'
+import SideNav from '@views/partials/SideNav'
+import HeaderComponent from '@views/partials/Header'
+import RoutesMapConfig from '@router/routes'
 
 export default{
   name: 'Frame',
@@ -25,6 +27,7 @@ export default{
   },
 
   created () {
+    this.initMenuList()
   },
 
   components: {
@@ -33,6 +36,19 @@ export default{
   },
 
   methods: {
+    initMenuList () {
+      let menuList = RoutesMapConfig.slice()
+      menuList.forEach(item => {
+        item.component && delete item.component
+        if (!this.$_.isEmpty(item.children)) {
+          menuList.forEach(cItem => {
+            cItem.component && delete cItem.component
+          })
+        }
+      })
+      this.$setMenuList(menuList)
+    },
+
     onHideMenuClick () {
       document.getElementById('app').className = ''
     }
