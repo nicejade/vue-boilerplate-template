@@ -2,7 +2,7 @@
   <div class="page-error">
     <div class="box">
       <div class="pic">
-        <img src="../assets/images/404.png" alt=""></div>
+        <img src="../../assets/images/404.png" alt=""></div>
       <div class="info">
         <h1>404</h1>
         <h4>返回首页</h4>
@@ -11,6 +11,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default{
   name: 'not-found',

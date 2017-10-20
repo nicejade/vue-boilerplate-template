@@ -19,7 +19,8 @@ Vue.mixin({
 
   methods: {
     ...mapActions([
-      'getUserInfo'
+      '$getUserInfo',
+      '$setMenuList'
     ])
   }
 })

@@ -1,7 +1,7 @@
 /*
 * 通用路由配置，需要放在配置项数组的末端
 */
-import NotFound from '@views/exception/NotFound'
+import NotFound from '@views/partials/NotFound'
 export default [
   {
     path: '/login',
@@ -9,7 +9,7 @@ export default [
       title: '登录',
       ignoreAuth: true
     },
-    component: resolve => require(['../views/Login'], resolve)
+    component: resolve => require(['@views/Login'], resolve)
   },
   {
     path: '/',
