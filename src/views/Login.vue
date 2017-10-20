@@ -2,7 +2,7 @@
   <div class="login-wrap">
     <div class="login-box">
       <img src="../assets/images/logo.png" alt="">
-      <h1 class="heading">Vue-Boilerplate-Template</h1>
+      <h1 class="heading">{{ $t('projectTitle') }}</h1>
       <el-form :model="account" :rules="rules" ref="validateForm">
         <el-form-item prop="username">
           <el-input v-model="account.username" :placeholder="$t('username')"></el-input>
@@ -69,6 +69,7 @@
               // this.$store.commit('$vuexSetUserInfo')
               this.$router.push('/')
             }).catch((err) => {
+              this.$router.push('/demo/form')
               this.$message.error(err.msg)
             }).fin(() => {
               this.isLoading = false
@@ -121,6 +122,16 @@
     display: block;
     width: 100%;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 667px) {
+  .login-wrap {
+    margin-top: 0;
+    width: 350px ;
+  }
+  .login-box {
+    width: 350px;
   }
 }
 

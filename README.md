@@ -1,6 +1,10 @@
-<h1 align="center"><strong>vue-boilerplate-template</strong></h1>
+<p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
 
-A Nice Boilerplate Template for creating medium plus Vue.js projects.
+<h1 align="center"><strong>vue-boilerplate-template (V1.0)</strong></h1>
+
+A Nice Boilerplate Template for creating medium plus Vue.js projects. 
+
+>`Vue`: "2.2.2"， `webpack`: "v3.5.5".
 
 ## Goal and Philosophy
 
@@ -9,6 +13,14 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 ## Prerequisites
 
 [Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
+
+## Advantage
+- Based on `vue-cli` build， Make more optimization for how to to facilitate the use of vue .
+- Has already included a lot of commonly used libraries， such as `vue-i18n`, `axios`, `lodash` ...
+- With some experience articles about `Vue`, Such as: [如何写一手漂亮的 Vue](https://jeffjade.com/2017/03/11/120-how-to-write-vue-better/). And is still updated.
+- Make more optimization about how to build the application using `WebPack` .
+  - [Webpack 打包优化之体积篇](http://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/)
+  - [Webpack 打包优化之速度篇](http://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/)
 
 ## Usage
 
@@ -99,14 +111,21 @@ this.$apis.getProfile(params).then(result => {
 So considerate, Template has been helped to handle the request uniformly, so you can be so easy to use, of course, you can change your own as needed in the `helper/ajax.js` file .
 
 ## Links
+
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
 - [Blog](http://jeffjade.com)
+- [Accessorial Blog](https://blog.lovejade.cn/)
+- [Weibo](http://weibo.com/jeffjade)
+- [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
 - [Twitter](https://twitter.com/jeffjade2)
 - [Facebook](https://www.facebook.com/yang.gang.jade)
-- [Weibo](http://weibo.com/jeffjade)
 
 ## Writing
 
 See the example in the boilerplate template.
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017-present, NiceJade.
