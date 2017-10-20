@@ -1,4 +1,4 @@
-import Frame from '@views/Frame'
+import Frame from '@views/partials/Frame'
 import { $utils } from '@helper'
 
 export default [{
@@ -11,7 +11,7 @@ export default [{
         title: $utils.titleLang('示例表单', 'Demo Form'),
         ignoreAuth: true
       },
-      component: resolve => require(['../../views/demo/Form'], resolve)
+      component: resolve => require(['@views/demo/Form'], resolve)
     },
     {
       path: 'demo/list',
@@ -19,7 +19,7 @@ export default [{
         title: $utils.titleLang('示例列表', 'Demo  List'),
         ignoreAuth: true
       },
-      component: resolve => require(['../../views/demo/List'], resolve)
+      component: resolve => require(['@views/demo/List'], resolve)
     }
   ]
 }]

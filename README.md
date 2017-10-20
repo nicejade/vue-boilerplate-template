@@ -62,7 +62,7 @@ Webpack plugin and CLI utility that represents bundle content as convenient inte
 - lodash
 - moment
 - js-cookie
-- vuex-persistedstate
+- ~~vuex-persistedstate~~
 - ... ...
 
 ## Operation request
