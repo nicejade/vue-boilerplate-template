@@ -111,7 +111,7 @@ module.exports = {
         loader: 'url-loader',
         include: [resolve('src/assets/images')],
         query: {
-          limit: 10000,
+          limit: 8192,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
