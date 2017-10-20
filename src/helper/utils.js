@@ -69,7 +69,8 @@ export default {
    */
   getStorage (name) {
     if (!name) return
-    return window.localStorage.getItem(name)
+    let content = window.localStorage.getItem(name)
+    return JSON.parse(content)
   },
 
   /**
