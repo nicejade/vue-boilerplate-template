@@ -50,16 +50,35 @@ export default{
           鉴于没个项目有所区别，这部分实现，在现有代码中已省略，相信您会处理的更好。
         Date: update@2017-10-20
       */
-      let menuList = RoutesMapConfig.slice()
-      menuList.forEach(item => {
-        item.component && delete item.component
-        if (!this.$_.isEmpty(item.children)) {
-          menuList.forEach(cItem => {
-            cItem.component && delete cItem.component
-          })
+      let menuList = this.deleteNodeByName(RoutesMapConfig)
+      menuList = this.filterNodeByName(menuList, 'isHideInMenu')
+      this.$setMenuList(menuList)
+    },
+
+    deleteNodeByName (source, name) {
+      // JSON.parse(JSON.stringify(list))✅; but slice() ❌;
+      let tempList = this.$_.cloneDeep(source)
+      tempList.forEach(item => {
+        item[name] && delete item[name]
+        if (item.children && item.children.length) {
+          for (let key in item.children) {
+            delete item.children[key][name]
+          }
         }
       })
-      this.$setMenuList(menuList)
+      return tempList
+    },
+
+    filterNodeByName (source, name) {
+      let result = source.filter(function cFilter (item) {
+        if (!item[name]) {
+          item.children && (item.children = item.children.filter(cFilter))
+          return true
+        } else {
+          return false
+        }
+      })
+      return result
     },
 
     onHideMenuClick () {
