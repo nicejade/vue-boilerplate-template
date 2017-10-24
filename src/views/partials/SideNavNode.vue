@@ -1,15 +1,15 @@
 <template>
-  <el-submenu v-if="isContainMore(model)" :index="model.id">
+  <el-submenu v-if="isContainMore(model)" :index="model.name">
     <template slot="title">
       <i v-if="model.icon" :class="`el-icon-${model.icon}`"></i>
-      {{ model.title[$currentLang] }}
+      {{ model.meta.title[$currentLang] }}
     </template>
     <template v-for="(item, index) in model.children">
       <el-menu-item v-if="!isContainMore(item)"
         :class="item.path === $route.path ? 'is-active': ''"
         :index="item.path"
         @click="onMenuItemClick(item.path)">
-        {{ item.title[$currentLang] }}
+        {{ item.meta.title[$currentLang] }}
       </el-menu-item>
       <side-nav-node :model="item"></side-nav-node>
     </template>
