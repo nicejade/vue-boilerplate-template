@@ -2,7 +2,7 @@
   <div class="sidenav">
     <el-menu router unique-opened theme="dark"
       :default-openeds="defaultOpeneds" >
-      <template v-for="(item, index) in sideNav">
+      <template v-for="(item, index) in menuList">
         <side-nav-node :model="item"></side-nav-node>
       </template>
     </el-menu>
@@ -11,20 +11,24 @@
 
 <script>
 import SideNavNode from './SideNavNode'
-import MenuConfig from '@constants/menuConfig'
 
 export default {
   name: 'side-nav',
 
   data () {
     return {
-      sideNav: MenuConfig,
       defaultOpeneds: ['demo']
     }
   },
 
   components: {
     SideNavNode
+  },
+
+  computed: {
+    menuList () {
+      return this.$store.state.menuList
+    }
   }
 }
 </script>
