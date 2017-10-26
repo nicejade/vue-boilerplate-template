@@ -1,10 +1,10 @@
 <p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
 
-<h1 align="center"><strong>vue-boilerplate-template (V1.1)</strong></h1>
+<h1 align="center"><strong>vue-boilerplate-template (V2.0.0)</strong></h1>
 
 A Nice Boilerplate Template for creating medium plus Vue.js projects. 
 
->`Vue`: "2.2.2"， `webpack`: "v3.5.5".
+>`Vue`: "2.5.2"， `webpack`: "v3.5.5". `element-ui`: "^1.4.8"
 
 ## Goal and Philosophy
 
