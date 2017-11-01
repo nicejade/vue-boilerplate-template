@@ -1,10 +1,10 @@
 <p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
 
-<h1 align="center"><strong>vue-boilerplate-template (V1.1)</strong></h1>
+<h1 align="center"><strong>vue-boilerplate-template (V2.0.0)</strong></h1>
 
 A Nice Boilerplate Template for creating medium plus Vue.js projects. 
 
->`Vue`: "2.2.2"， `webpack`: "v3.5.5".
+>`Vue`: "2.5.2"， `webpack`: "v3.5.5". `element-ui`: "^1.4.8"
 
 ## Goal and Philosophy
 
@@ -51,6 +51,11 @@ Equivalent execution `node build.js`, initiate a build project .
 npm run build:dll
 ```
 Equivalent execution `webpack --config build/webpack.dll.conf.js`, For more information see [webpack.DllPlugin](https://webpack.js.org/plugins/dll-plugin/).
+
+```
+npm run pretest
+```
+Using nodejs to build the local server, do a simple pre testv for the code after the package.
 
 ```
 npm run analyz

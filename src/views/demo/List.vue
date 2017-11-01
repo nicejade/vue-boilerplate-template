@@ -14,7 +14,7 @@
             <el-table-column prop="address" label="地址"></el-table-column>
             <el-table-column prop="zip" label="邮编" width="120"></el-table-column>
             <el-table-column label="操作" width="100">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <el-button @click="onEditClick(scope.row, scope.$index)" type="primary" size="small">编辑</el-button>
               </template>
             </el-table-column>
