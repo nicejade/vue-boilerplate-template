@@ -90,7 +90,7 @@ export default {
   height: $header-height;
   width: 100%;
   min-width: 320px;
-  background-color: $blue;
+  background-color: $header-bg;
   @include clearfix();
 
   a {
@@ -133,7 +133,7 @@ export default {
     padding: 20px;
 
     &:hover {
-      background-color: $dark-blue;
+      background-color: $header-bg;
     }
   }
   .operate {
@@ -146,7 +146,7 @@ export default {
         min-width: 150px !important;
       }
       > a {
-        background-color: $dark-blue;
+        background-color: $header-bg;
       }
     }
     > a {
@@ -155,7 +155,7 @@ export default {
       color: #fff;
     }
     .active {
-      background-color: $dark-blue;
+      background-color: $header-bg;
     }
     .avatar {
       display: inline-block;
