@@ -29,7 +29,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
        // (💛)If the agent's protocol is http, you can configure like this:
-      '/api': 'http://localhost:3000'
+      '/api': 'http://localhost:3000',
       // [‼️💯💞]If the proxy protocol is https, you need to configure this：
       '/api/v1': {
         target: {
