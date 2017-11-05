@@ -28,7 +28,19 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': 'http://localhost:3000'
+       // (💛)If the agent's protocol is http, you can configure like this:
+      '/api': 'http://localhost:3000',
+      // [‼️💯💞]If the proxy protocol is https, you need to configure this：
+      '/api/v1': {
+        target: {
+          host: 'google.com',
+          protocol: 'https:',
+          port: 443
+        },
+        changeOrigin: true,
+        logLevel: 'info',
+        secure: false
+      }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
