@@ -118,10 +118,12 @@ So considerate, Template has been helped to handle the request uniformly, so you
 ## Links
 
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
-- [Blog](http://jeffjade.com)
-- [Accessorial Blog](https://blog.lovejade.cn/)
+- [Nice Links](https://nicelinks.site)
+- [First Blog](https://jeffjade.com)
+- [Second Blog](https://blog.lovejade.cn/)
 - [Weibo](http://weibo.com/jeffjade)
 - [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
+- [JianShu](http://www.jianshu.com/u/9aae3d8f4c3d)
 - [Twitter](https://twitter.com/jeffjade2)
 - [Facebook](https://www.facebook.com/yang.gang.jade)
 
