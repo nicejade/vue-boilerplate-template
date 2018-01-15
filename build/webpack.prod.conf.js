@@ -12,6 +12,7 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 var ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
+var Jarvis = require('webpack-jarvis')
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -144,6 +145,12 @@ if (config.build.productionGzip) {
 if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+}
+
+if (config.build.bundleIntelligentDashboard) {
+  webpackConfig.plugins.push(new Jarvis({
+    port: 1337 // optional: set a port.
+  }))
 }
 
 module.exports = webpackConfig
