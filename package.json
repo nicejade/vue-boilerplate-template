@@ -1,8 +1,8 @@
 {
   "name": "vue-boilerplate-template",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Nice Boilerplate Template for creating medium plus Vue.js projects ",
-  "author": "jade.yang <yunjeff@163.com>",
+  "author": "nicejade <yunjeff@163.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -13,6 +13,7 @@
     "lint-staged": "lint-staged",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "analyz": "NODE_ENV=production  npm_config_report=true npm run build",
+    "jarvis": "NODE_ENV=production  npm_config_dashboard=true npm run build",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -122,6 +123,7 @@
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
+    "webpack-jarvis": "^0.2.0",
     "webpack-merge": "^2.6.1",
     "webpack-parallel-uglify-plugin": "^1.0.0"
   },
