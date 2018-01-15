@@ -19,7 +19,8 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
+    bundleAnalyzerReport: process.env.npm_config_report,
+    bundleIntelligentDashboard: process.env.npm_config_dashboard
   },
   dev: {
     env: require('./dev.env'),
