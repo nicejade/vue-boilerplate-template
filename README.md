@@ -56,9 +56,9 @@ Equivalent execution `webpack --config build/webpack.dll.conf.js`, For more info
 npm run jarvis / yarn run jarvis
 ```
 
-run [jarvis](https://github.com/zouhir/jarvis)(A very intelligent browser based Webpack dashboard)，In your browser open: localhost:1337 , you have it.
+run [webpack-jarvis](https://github.com/zouhir/jarvis)(A very intelligent browser based Webpack dashboard)，In your browser open: localhost:1337 , you have it.
 
-![JARVIS for Webpack]()
+![JARVIS for Webpack](https://raw.githubusercontent.com/nicejade/vue-boilerplate-template/master/static/img/JARVIS%20for%20Webpack.png)
 
 ```
 npm run pretest
