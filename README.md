@@ -53,6 +53,14 @@ npm run build:dll
 Equivalent execution `webpack --config build/webpack.dll.conf.js`, For more information see [webpack.DllPlugin](https://webpack.js.org/plugins/dll-plugin/).
 
 ```
+npm run jarvis / yarn run jarvis
+```
+
+run [jarvis](https://github.com/zouhir/jarvis)(A very intelligent browser based Webpack dashboard)，In your browser open: localhost:1337 , you have it.
+
+![JARVIS for Webpack]()
+
+```
 npm run pretest
 ```
 Using nodejs to build the local server, do a simple pre testv for the code after the package.
