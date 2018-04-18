@@ -1,25 +1,27 @@
-var path = require('path')
-var chalk = require('chalk')
-var webpack = require('webpack')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
-var svgoConfig = require('../config/svgo-config.json')
-var ProgressBarPlugin = require('progress-bar-webpack-plugin')
-var HappyPack = require('happypack')
-var os = require('os')
-var happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
+const chalk = require('chalk')
+const webpack = require('webpack')
+const utils = require('./utils')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
+const svgoConfig = require('../config/svgo-config.json')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const HappyPack = require('happypack')
+const os = require('os')
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
+const env = process.env.NODE_ENV
 
-var cssLoader = ExtractTextPlugin.extract({
+const cssLoader = ExtractTextPlugin.extract({
   use: [
     'happypack/loader?id=happy-css'
   ]
 })
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 // inject happypack accelerate packing for vue-loader @17-08-18
 Object.assign(vueLoaderConfig.loaders, {
@@ -41,6 +43,7 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  mode: env === 'production' ? 'production' : 'development',
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -75,12 +78,14 @@ module.exports = {
     rules: [
       {
         test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
+        use: [
+          {
+            loader: 'eslint-loader'
+          }
+        ],
         enforce: 'pre',
         include: [resolve('src')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.svg$/,
@@ -147,6 +152,7 @@ module.exports = {
           }
         }
       }]
-    })
+    }),
+    new webpack.LoaderOptionsPlugin({ options: {} })
   ]
 }
