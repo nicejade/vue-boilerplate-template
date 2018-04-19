@@ -9,11 +9,11 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const HappyPack = require('happypack')
 const os = require('os')
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const env = process.env.NODE_ENV
 
-const cssLoader = ExtractTextPlugin.extract({
+const cssLoader = new MiniCssExtractPlugin({
   use: [
     'happypack/loader?id=happy-css'
   ]
@@ -88,6 +88,24 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.scss$/,
+        // css-hot-loader会增加打包的体积
+        use:
+          env === 'production'
+            ? [MiniCssExtractPlugin.loader, 'css-loader?importLoaders=1', 'postcss-loader']
+            : [
+              'css-hot-loader',
+              MiniCssExtractPlugin.loader,
+              'css-loader?importLoaders=1',
+              'postcss-loader'
+            ]
+      },
+      {
+        test: /\.css$/,
+        include: [path.resolve('src')],
+        use: ['css-hot-loader', 'style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
         test: /\.svg$/,
         enforce: 'pre',
         loader: 'svgo-loader?' + JSON.stringify(svgoConfig),
@@ -97,6 +115,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         include: [resolve('src')],
+        exclude: /node_modules/,
         options: vueLoaderConfig
       },
       {
@@ -107,7 +126,6 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'svg-sprite-loader',
         loader: 'happypack/loader?id=happy-svg',
         include: [resolve('src/assets/icons'), resolve('src/assets/images')]
       },
