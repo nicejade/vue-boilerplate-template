@@ -1,10 +1,10 @@
 <p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
 
-<h1 align="center"><strong>vue-boilerplate-template (V2.0.0)</strong></h1>
+<h1 align="center"><strong>vue-boilerplate-template (V3.0.0)</strong></h1>
 
 A Nice Boilerplate Template for creating medium plus Vue.js projects. 
 
->`Vue`: "2.5.2"， `webpack`: "v3.5.5". `element-ui`: "^1.4.8"
+>`Vue`: "2.5.2"， `webpack`: "v4.6.1". `element-ui`: "^1.4.8"
 
 ## Goal and Philosophy
 
@@ -21,6 +21,8 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 - Make more optimization about how to build the application using `WebPack` .
   - [Webpack 打包优化之体积篇](http://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/)
   - [Webpack 打包优化之速度篇](http://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/)
+  - [Optimize your libraries with webpack](https://github.com/GoogleChromeLabs/webpack-libs-optimizations)
+  - [Webpack Nice Tutorial](https://github.com/nicejade/nice-front-end-tutorial/blob/master/tutorial/webpack-tutorial.md)
 
 ## Usage
 

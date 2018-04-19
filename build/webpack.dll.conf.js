@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -9,10 +10,9 @@ module.exports = {
     vendor: [
       'babel-polyfill',
       'js-cookie',
-      'moment',
       'q',
       'axios',
-      'vue/dist/vue.common.js',
+      'vue/dist/vue.min.js',
       'vue-i18n',
       'vue-router',
       'vuex'
@@ -49,11 +49,17 @@ module.exports = {
     ]
   },
   plugins: [
+    /*
+      @desc: https://webpack.js.org/plugins/module-concatenation-plugin/
+      "作用域提升(scope hoisting)",使代码体积更小[函数申明会产生大量代码](#webpack3)
+    */
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn|en-gb/),
     new webpack.DllPlugin({
       path: path.join(__dirname, '.', '[name]-manifest.json'),
       name: '[name]_library'
+    }),
+    new MomentLocalesPlugin({
+      localesToKeep: ['es-us', 'zh-cn']
     })
   ]
 }

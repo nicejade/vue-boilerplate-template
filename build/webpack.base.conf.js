@@ -58,7 +58,7 @@ module.exports = {
       resolve('node_modules')
     ],
     alias: {
-      'vue$': 'vue/dist/vue.common.js',
+      'vue$': 'vue/dist/vue.min.js',
       '@': resolve('src'),
       '@assets': resolve('src/assets'),
       '@constants': resolve('src/constants'),
