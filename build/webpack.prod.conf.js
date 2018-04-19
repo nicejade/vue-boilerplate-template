@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -21,6 +22,15 @@ const env = process.env.NODE_ENV === 'testing'
 
 const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
+  // @desc: Documenttion: https://webpack.js.org/configuration/performance/
+  performance: {
+    // Given an asset is created that is over 250kb；false | "error" | "warning"(Default)
+    hints: 'warning',
+    // The default value is 250000 (bytes).
+    maxEntrypointSize: 288888,
+    // This option controls when webpack emits a performance hint based on individual asset size. The default value is 250000 (bytes).
+    maxAssetSize: 288888
+  },
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
@@ -36,7 +46,55 @@ const webpackConfig = merge(baseWebpackConfig, {
       // Compress extracted CSS. We are using this plugin so that possible
       // duplicated CSS from different components can be deduped.
       new OptimizeCSSAssetsPlugin({})
-    ]
+    ],
+    // @desc:  Documentation：https://www.webpackjs.com/plugins/split-chunks-plugin/
+    splitChunks: {
+      chunks: 'async',
+      // （默认值：30000）块的最小大小
+      minSize: 30000,
+      // （默认值：1）分割前共享模块的最小块数
+      minChunks: 2,
+      // （缺省值5）按需加载时的最大并行请求数
+      maxAsyncRequests: 8,
+      // （默认值3）入口点上的最大并行请求数
+      maxInitialRequests: 6,
+      // webpack 将使用块的起源和名称来生成名称: `vendors~main.js`,如项目与"~"冲突，则可通过此值修改，Eg: '-'
+      automaticNameDelimiter: '~',
+      name: true,
+      // cacheGroups is an object where keys are the cache group names.
+      cacheGroups: {
+        default: false,
+        // 创建一个 commons 块，其中包括入口点之间共享的所有代码
+        commons: {
+          name: 'commons',
+          chunks: 'async',
+          minChunks: 5,
+          maxInitialRequests: 6, // The default limit is too small to showcase the effect
+          minSize: 60000 // This is example is too small to create commons chunks
+        },
+        vendor: {
+          test: /node_modules\/(.*)\.js/,
+          chunks: 'initial',
+          name: 'vendor',
+          // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
+          priority: -10,
+          enforce: true
+        },
+        styles: {
+          name: 'styles',
+          test: /\.(scss|css)$/,
+          chunks: 'all',
+          minChunks: 1,
+          // 选项reuseExistingChunk允许重复使用现有的块，而不是在模块完全匹配时创建新的块
+          reuseExistingChunk: true,
+          enforce: true
+        }
+      }
+    },
+    // runtimeChunk: true, adds an additonal chunk to each entrypoint containing only the runtime.
+    runtimeChunk: {
+      name: 'manifest'
+    }
   },
   plugins: [
     // new webpack.optimize.ModuleConcatenationPlugin(),
@@ -44,12 +102,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false
-    //   },
-    //   sourceMap: true
-    // }),
     new ParallelUglifyPlugin({
       cacheDir: '.cache/',
       uglifyJS: {
@@ -87,6 +139,9 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency',
       serviceWorkerLoader: `<script>${fs.readFileSync(path.join(__dirname,
         './service-worker-prod.js'), 'utf-8')}</script>`
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, 'dist/*.dll.js')
     }),
     // copy custom static assets
     // new CopyWebpackPlugin([
