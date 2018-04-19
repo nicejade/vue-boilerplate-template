@@ -5,7 +5,6 @@ import ElementUI from 'element-ui'
 import Cookies from 'js-cookie'
 import _ from '@helper/lodash.js'
 import locales from './locales'
-import 'element-ui/lib/theme-default/index.css'
 import Icon from '@components/Icon/index.js'
 import { $apis, $utils, $document, $auth } from '@helper'
 
