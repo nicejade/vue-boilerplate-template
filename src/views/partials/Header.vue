@@ -55,8 +55,7 @@ export default {
 
     /* ----------------------------On Click Event---------------------------- */
     onToggleMenuClick () {
-      let app = document.getElementById('app')
-      app.className = !app.className ? 'menu-expand' : ''
+      this.$triggerSidenav()
     },
 
     onLogoutClick () {
