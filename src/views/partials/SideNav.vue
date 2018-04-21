@@ -47,7 +47,7 @@ export default {
   z-index: 8;
   width: $sidenav-width;
   min-width: 200px;
-  background-color: #48576a;
+  background-color: #eef1f6;
   a {
     display: block;
     color: $black;
@@ -55,12 +55,12 @@ export default {
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $blue;
+      color: $brand;
     }
   }
   .active {
     text-decoration: none;
-    color: $blue;
+    color: $brand;
   }
   .title {
     padding: 15px;

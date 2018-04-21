@@ -14,13 +14,13 @@
   a {
     &:hover {
       .icon {
-        color: $blue;
+        color: $brand;
       }
     }
   }
   .active {
     .icon {
-      color: $blue;
+      color: $brand;
     }
   }
 }

@@ -2,18 +2,18 @@
   .sidenav {
     .el-submenu__title:hover {
       text-decoration: none;
-      color: $blue;
+      color: $brand;
     }
     .el-menu-item.is-active,
     .el-menu-item:hover {
-      color: $blue;
+      color: $brand;
       .icon {
-        color: $blue;
+        color: $brand;
       }
     }
     .el-submenu .el-menu {}
     .el-submenu .el-menu-item:hover {
-      color: $blue;
+      color: $brand;
     }
   }
 
