@@ -1,12 +1,12 @@
 <template>
-  <el-submenu v-if="isContainMore(model)" :index="model.name">
+  <el-submenu v-if="isContainMore(model)" :index="model.fullpath">
     <template slot="title">
       <i v-if="model.icon" :class="`el-icon-${model.icon}`"></i>
       {{ model.meta.title[$currentLang] }}
     </template>
     <template v-for="(item, index) in model.children">
       <el-menu-item v-if="!isContainMore(item)"
-        :class="item.path === $route.path ? 'is-active': ''"
+        :class="item.fullpath === $route.path ? 'is-active': ''"
         :index="item.path"
         @click="onMenuItemClick(item.path)">
         {{ item.meta.title[$currentLang] }}
