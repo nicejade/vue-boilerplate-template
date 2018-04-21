@@ -1,7 +1,7 @@
 <template>
   <div class="sidenav">
-    <el-menu router unique-opened theme="dark"
-      :default-openeds="defaultOpeneds" >
+    <el-menu router unique-opened
+      :default-openeds="defaultOpeneds">
       <template v-for="(item, index) in menuList">
         <side-nav-node :model="item"></side-nav-node>
       </template>
