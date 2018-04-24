@@ -1,7 +1,7 @@
 <template>
   <div class="sidenav">
-    <el-menu router unique-opened theme="dark"
-      :default-openeds="defaultOpeneds" >
+    <el-menu router unique-opened
+      :default-openeds="defaultOpeneds">
       <template v-for="(item, index) in menuList">
         <side-nav-node :model="item"></side-nav-node>
       </template>
@@ -47,7 +47,7 @@ export default {
   z-index: 8;
   width: $sidenav-width;
   min-width: 200px;
-  background-color: #48576a;
+  background-color: #eef1f6;
   a {
     display: block;
     color: $black;
@@ -55,12 +55,12 @@ export default {
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $blue;
+      color: $brand;
     }
   }
   .active {
     text-decoration: none;
-    color: $blue;
+    color: $brand;
   }
   .title {
     padding: 15px;

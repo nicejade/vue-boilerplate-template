@@ -50,23 +50,9 @@ export default{
           鉴于没个项目有所区别，这部分实现，在现有代码中已省略，相信您会处理的更好。
         Date: update@2017-10-20
       */
-      let menuList = this.deleteNodeByName(RoutesMapConfig)
-      menuList = this.filterNodeByName(menuList, 'isHideInMenu')
+      const routesConf = this.$_.cloneDeep(RoutesMapConfig)
+      const menuList = this.filterNodeByName(routesConf, 'isHideInMenu')
       this.$setMenuList(menuList)
-    },
-
-    deleteNodeByName (source, name) {
-      // JSON.parse(JSON.stringify(list))✅; but slice() ❌;
-      let tempList = this.$_.cloneDeep(source)
-      tempList.forEach(item => {
-        item[name] && delete item[name]
-        if (item.children && item.children.length) {
-          for (let key in item.children) {
-            delete item.children[key][name]
-          }
-        }
-      })
-      return tempList
     },
 
     filterNodeByName (source, name) {
