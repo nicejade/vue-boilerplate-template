@@ -12,6 +12,8 @@
   <strong>🍎 A Nice Boilerplate Template for creating medium plus Vue.js(2.*)</strong>
 </div>
 
+<br>
+
 <div align="center">
   <a href="https://circleci.com/gh/nicejade/vue-boilerplate-template">
     <img src="https://img.shields.io/circleci/project/nicejade/vue-boilerplate-template.svg" alt="Build Status">
@@ -27,15 +29,13 @@
   </a>
 </div>
 
->`Vue`: "2.5.2"， `webpack`: "v4.6.1". `element-ui`: "^2.3.6"
-
 ## Goal and Philosophy
 
 For how to build medium-sized (+) VUE projects, provide some reference based on past experience.
 
 ## Prerequisites
 
-[Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
+[Node.js](https://nodejs.org/en/) (>=4.x, 8.x preferred), Npm version 4+(Yarn preferred), and [Git](https://git-scm.com/).
 
 ## Advantage
 - Based on `vue-cli` build， Make more optimization for how to to facilitate the use of vue .
