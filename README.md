@@ -1,8 +1,22 @@
 <p align="center"><a href="https://vuejs.org" target="_blank"><img width="100"src="https://vuejs.org/images/logo.png"></a></p>
 
-<h1 align="center"><strong>vue-boilerplate-template (V3.0.0)</strong></h1>
+<h1 align="center"><strong>Vue Boilerplate Template</strong></h1>
 
-A Nice Boilerplate Template for creating medium plus Vue.js projects. 
+<div align="center">
+  <a href="https://twitter.com/intent/tweet?text=Cool:&url=https://github.com/nicejade/vue-boilerplate-template">
+    <img src="https://img.shields.io/twitter/url/https://github.com/nicejade/vue-boilerplate-template/blob/master/assets/images/logo.svg?style=for-the-badge" alt="twitter">
+  </a>
+</div>
+<div align="center">
+  <strong>🍎 A Nice Boilerplate Template for creating medium plus Vue.js(2.*)</strong>
+</div>
+
+<p align="center">
+  [![Build Status](https://img.shields.io/circleci/project/nicejade/vue-boilerplate-template.svg)](https://circleci.com/gh/nicejade/vue-boilerplate-template)
+  [![Node](https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg)](https://nodejs.org/en/)
+  [![LICENSE](https://img.shields.io/github/license/nicejade/vue-boilerplate-template.svg)](https://github.com/nicejade/vue-boilerplate-template)
+  [![Chat](https://img.shields.io/badge/chat-on%20%20spectrum-green.svg)](https://spectrum.chat/nice-links)
+</p>
 
 >`Vue`: "2.5.2"， `webpack`: "v4.6.1". `element-ui`: "^1.4.8"
 
