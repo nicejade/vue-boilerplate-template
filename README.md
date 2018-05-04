@@ -7,18 +7,27 @@
     <img src="https://img.shields.io/twitter/url/https://github.com/nicejade/vue-boilerplate-template/blob/master/assets/images/logo.svg?style=for-the-badge" alt="twitter">
   </a>
 </div>
+
 <div align="center">
   <strong>🍎 A Nice Boilerplate Template for creating medium plus Vue.js(2.*)</strong>
 </div>
 
-<p align="center">
-  [![Build Status](https://img.shields.io/circleci/project/nicejade/vue-boilerplate-template.svg)](https://circleci.com/gh/nicejade/vue-boilerplate-template)
-  [![Node](https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg)](https://nodejs.org/en/)
-  [![LICENSE](https://img.shields.io/github/license/nicejade/vue-boilerplate-template.svg)](https://github.com/nicejade/vue-boilerplate-template)
-  [![Chat](https://img.shields.io/badge/chat-on%20%20spectrum-green.svg)](https://spectrum.chat/nice-links)
-</p>
+<br>
 
->`Vue`: "2.5.2"， `webpack`: "v4.6.1". `element-ui`: "^1.4.8"
+<div align="center">
+  <a href="https://circleci.com/gh/nicejade/vue-boilerplate-template">
+    <img src="https://img.shields.io/circleci/project/nicejade/vue-boilerplate-template.svg" alt="Build Status">
+  </a>
+  <a href="https://nodejs.org/en/">
+    <img src="https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg" alt="NodeJs">
+  </a>
+  <a href="https://github.com/nicejade/vue-boilerplate-template">
+    <img src="https://img.shields.io/github/license/nicejade/vue-boilerplate-template.svg" alt="LICENSE">
+  </a>
+  <a href="https://spectrum.chat/nice-links">
+    <img src="https://img.shields.io/badge/chat-on%20%20spectrum-green.svg" alt="Chat">
+  </a>
+</div>
 
 ## Goal and Philosophy
 
@@ -26,7 +35,7 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 
 ## Prerequisites
 
-[Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
+[Node.js](https://nodejs.org/en/) (>=4.x, 8.x preferred), Npm version 4+(Yarn preferred), and [Git](https://git-scm.com/).
 
 ## Advantage
 - Based on `vue-cli` build， Make more optimization for how to to facilitate the use of vue .
