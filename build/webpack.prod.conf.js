@@ -161,11 +161,19 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new LodashModuleReplacementPlugin(),
     /*
-      @desc:
+      @desc: limit minChunkSize through MinChunkSizePlugin
       @reference: https://webpack.js.org/plugins/min-chunk-size-plugin/
     */
     new webpack.optimize.MinChunkSizePlugin({
       minChunkSize: 18000 // Minimum number of characters
+    }),
+    /*
+      @desc: 编译之后，您可能会注意到某些块太小 - 创建更大的HTTP开销，那么您可以处理像这样；
+      @reference: https://webpack.js.org/plugins/limit-chunk-count-plugin/
+    */
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 10 // Must be greater than or equal to one
+      // minChunkSize: 1000
     })
   ]
 })
