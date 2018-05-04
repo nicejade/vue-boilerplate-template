@@ -5383,7 +5383,7 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "http://registry.npm.taobao.org/lodash.memoize/download/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
 
-lodash.merge@^4.4.0, lodash.merge@^4.6.0:
+lodash.merge@^4.4.0:
   version "4.6.0"
   resolved "http://registry.npm.taobao.org/lodash.merge/download/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
 
@@ -6170,10 +6170,6 @@ object-hash@^1.1.4:
 object-keys@^1.0.10, object-keys@^1.0.8:
   version "1.0.11"
   resolved "http://registry.npm.taobao.org/object-keys/download/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
-
-object-path@^0.11.2:
-  version "0.11.4"
-  resolved "http://registry.npm.taobao.org/object-path/download/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
 
 object-visit@^1.0.0:
   version "1.0.1"
@@ -8951,13 +8947,6 @@ vue-template-es2015-compiler@^1.2.2:
 vue@^2.5.2:
   version "2.5.2"
   resolved "http://registry.npm.taobao.org/vue/download/vue-2.5.2.tgz#fd367a87bae7535e47f9dc5c9ec3b496e5feb5a4"
-
-vuex-persistedstate@^1.4.1:
-  version "1.4.1"
-  resolved "http://registry.npm.taobao.org/vuex-persistedstate/download/vuex-persistedstate-1.4.1.tgz#d1b408e6ba6cda5e849226856820600996aef5ef"
-  dependencies:
-    lodash.merge "^4.6.0"
-    object-path "^0.11.2"
 
 vuex@^2.1.2:
   version "2.5.0"
