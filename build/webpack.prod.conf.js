@@ -27,9 +27,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Given an asset is created that is over 250kb；false | "error" | "warning"(Default)
     hints: 'warning',
     // The default value is 250000 (bytes).
-    maxEntrypointSize: 288888,
+    maxEntrypointSize: 307200, // (300kb)
     // This option controls when webpack emits a performance hint based on individual asset size. The default value is 250000 (bytes).
-    maxAssetSize: 288888
+    maxAssetSize: 307200
   },
   output: {
     path: config.build.assetsRoot,
@@ -49,35 +49,40 @@ const webpackConfig = merge(baseWebpackConfig, {
     ],
     // @desc:  Documentation：https://www.webpackjs.com/plugins/split-chunks-plugin/
     splitChunks: {
+      // chunks: "initial"，"async"和"all"分别是：初始块，按需块或所有块；
       chunks: 'async',
       // （默认值：30000）块的最小大小
       minSize: 30000,
       // （默认值：1）分割前共享模块的最小块数
-      minChunks: 2,
+      minChunks: 6,
       // （缺省值5）按需加载时的最大并行请求数
       maxAsyncRequests: 8,
       // （默认值3）入口点上的最大并行请求数
-      maxInitialRequests: 6,
+      maxInitialRequests: 8,
       // webpack 将使用块的起源和名称来生成名称: `vendors~main.js`,如项目与"~"冲突，则可通过此值修改，Eg: '-'
       automaticNameDelimiter: '~',
       name: true,
       // cacheGroups is an object where keys are the cache group names.
       cacheGroups: {
+        // 设置为 false 以禁用默认缓存组
         default: false,
-        // 创建一个 commons 块，其中包括入口点之间共享的所有代码
-        commons: {
-          name: 'commons',
-          chunks: 'async',
-          minChunks: 5,
-          maxInitialRequests: 6, // The default limit is too small to showcase the effect
-          minSize: 60000 // This is example is too small to create commons chunks
+        element: {
+          test: /node_modules\/element-ui\/(.*)\.js/,
+          // test: /node_modules\/(element-ui|lodash)\/(.*)\.js/,
+          name: 'element',
+          chunks: 'initial',
+          // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
+          reuseExistingChunk: true,
+          priority: -10,
+          enforce: true
         },
         vendor: {
           test: /node_modules\/(.*)\.js/,
-          chunks: 'initial',
           name: 'vendor',
+          chunks: 'async',
           // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
           priority: -10,
+          reuseExistingChunk: true,
           enforce: true
         },
         styles: {
@@ -85,7 +90,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           test: /\.(scss|css)$/,
           chunks: 'all',
           minChunks: 1,
-          // 选项reuseExistingChunk允许重复使用现有的块，而不是在模块完全匹配时创建新的块
+          // 选项 reuseExistingChunk 允许重复使用现有的块，而不是在模块完全匹配时创建新的块
           reuseExistingChunk: true,
           enforce: true
         }
@@ -165,7 +170,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       @reference: https://webpack.js.org/plugins/min-chunk-size-plugin/
     */
     new webpack.optimize.MinChunkSizePlugin({
-      minChunkSize: 18000 // Minimum number of characters
+      minChunkSize: 25600 // Minimum number of characters (25kb)
     }),
     /*
       @desc: 编译之后，您可能会注意到某些块太小 - 创建更大的HTTP开销，那么您可以处理像这样；

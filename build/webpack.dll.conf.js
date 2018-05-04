@@ -14,7 +14,8 @@ module.exports = {
       'vue/dist/vue.min.js',
       'vue-i18n',
       'vue-router',
-      'vuex'
+      'vuex',
+      'dayjs'
     ]
   },
   output: {
