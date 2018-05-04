@@ -1189,10 +1189,6 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap@^4.0.0-alpha.6:
-  version "4.0.0-beta.2"
-  resolved "http://registry.npm.taobao.org/bootstrap/download/bootstrap-4.0.0-beta.2.tgz#4d67d2aa2219f062cd90bc1247e6747b9e8fd051"
-
 boxen@^0.6.0:
   version "0.6.0"
   resolved "http://registry.npm.taobao.org/boxen/download/boxen-0.6.0.tgz#8364d4248ac34ff0ef1b2f2bf49a6c60ce0d81b6"
