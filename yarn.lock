@@ -2230,6 +2230,10 @@ dateformat@^3.0.2:
   version "3.0.3"
   resolved "http://registry.npm.taobao.org/dateformat/download/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
 
+dayjs@^1.5.19:
+  version "1.5.19"
+  resolved "http://registry.npm.taobao.org/dayjs/download/dayjs-1.5.19.tgz#adf878e774e42a787ae813d864d43a6cc574d84d"
+
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/de-indent/download/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
@@ -5335,10 +5339,6 @@ lodash.defaultsdeep@4.3.2:
     lodash.mergewith "^4.0.0"
     lodash.rest "^4.0.0"
 
-lodash.difference@^4.5.0:
-  version "4.5.0"
-  resolved "http://registry.npm.taobao.org/lodash.difference/download/lodash.difference-4.5.0.tgz#9ccb4e505d486b91651345772885a2df27fd017c"
-
 lodash.filter@^4.4.0:
   version "4.6.0"
   resolved "http://registry.npm.taobao.org/lodash.filter/download/lodash.filter-4.6.0.tgz#668b1d4981603ae1cc5a6fa760143e480b4c4ace"
@@ -5818,16 +5818,6 @@ mocha@^3.2.0:
     lodash.create "3.1.1"
     mkdirp "0.5.1"
     supports-color "3.1.2"
-
-moment-locales-webpack-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.taobao.org/moment-locales-webpack-plugin/download/moment-locales-webpack-plugin-1.0.5.tgz#ff62f8b3383a89ef3f1feb82e95885a3f119f571"
-  dependencies:
-    lodash.difference "^4.5.0"
-
-moment@^2.22.1:
-  version "2.22.1"
-  resolved "http://registry.npm.taobao.org/moment/download/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
 move-concurrently@^1.0.1:
   version "1.0.1"

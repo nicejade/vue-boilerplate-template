@@ -6,7 +6,13 @@
     <div class="module-content">
       <div class="panel panel-default">
         <div class="panel-body">
-          <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+          <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
+            <div class="form-group col-sm-6">
+              <el-form-item label="当前时间" prop="name">
+                <span>{{ new Date() | dateTimeConvert }}</span>
+              </el-form-item>
+            </div>
+
             <div class="form-group col-sm-6">
               <el-form-item label="活动名称" prop="name">
                 <el-input v-model="ruleForm.name"></el-input>
