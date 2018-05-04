@@ -159,7 +159,14 @@ const webpackConfig = merge(baseWebpackConfig, {
       minify: true,
       stripPrefix: 'dist/'
     }),
-    new LodashModuleReplacementPlugin()
+    new LodashModuleReplacementPlugin(),
+    /*
+      @desc:
+      @reference: https://webpack.js.org/plugins/min-chunk-size-plugin/
+    */
+    new webpack.optimize.MinChunkSizePlugin({
+      minChunkSize: 18000 // Minimum number of characters
+    })
   ]
 })
 
