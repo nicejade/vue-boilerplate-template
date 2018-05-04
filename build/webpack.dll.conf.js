@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -57,9 +56,6 @@ module.exports = {
     new webpack.DllPlugin({
       path: path.join(__dirname, '.', '[name]-manifest.json'),
       name: '[name]_library'
-    }),
-    new MomentLocalesPlugin({
-      localesToKeep: ['es-us', 'zh-cn']
     })
   ]
 }

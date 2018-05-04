@@ -1,11 +1,10 @@
-import Moment from 'moment'
+import dayjs from 'dayjs'
 
 export default {
-  dateConvert (time) {
-    return time && Moment(time).format('YYYY-MM-DD HH:mm:ss')
+  dateTimeConvert (time) {
+    return time && dayjs(time).format('YYYY-MM-DD HH:mm:ss')
   },
-  dayConvert (time) {
-    return time && Moment(time).format('YYYY-MM-DD')
+  dateConvert (time) {
+    return time && dayjs(time).format('YYYY-MM-DD')
   }
 }
-
