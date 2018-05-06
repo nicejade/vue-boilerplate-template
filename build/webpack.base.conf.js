@@ -41,7 +41,8 @@ function createHappyPlugin (id, loaders) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    vendors: ['lodash']
   },
   mode: env === 'production' ? 'production' : 'development',
   output: {
