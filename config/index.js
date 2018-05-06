@@ -1,9 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 const path = require('path')
 
-/*
-  @desc: You can specify a specific path prefix based on your deployment.
-*/
+// You can specify a specific path prefix based on your deployment.
 // const STATIC_PATH = 'https://blog.lovejade.cn/jade/vue-boilerplate-template/'
 const publicPathPrefix = process.env.NODE_ENV === 'production' ? '/' : '/'
 

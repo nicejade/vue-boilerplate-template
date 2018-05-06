@@ -37,71 +37,61 @@ const webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
-  // optimization: {
-    // minimizer: [
-    //   new UglifyJsPlugin({
-    //     cache: true,
-    //     parallel: true,
-    //     sourceMap: config.build.productionSourceMap // set to true if you want JS source maps
-    //   }),
-    //   // Compress extracted CSS. We are using this plugin so that possible
-    //   // duplicated CSS from different components can be deduped.
-    //   new OptimizeCSSAssetsPlugin({})
-    // ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: config.build.productionSourceMap // set to true if you want JS source maps
+      }),
+      // Compress extracted CSS. We are using this plugin so that possible
+      // duplicated CSS from different components can be deduped.
+      new OptimizeCSSAssetsPlugin({})
+    ],
     // @desc:  Documentation：https://www.webpackjs.com/plugins/split-chunks-plugin/
-    // splitChunks: {
-    //   // chunks: "initial"，"async"和"all"分别是：初始块，按需块或所有块；
-    //   chunks: 'async',
-    //   // （默认值：30000）块的最小大小
-    //   minSize: 30000,
-    //   // （默认值：1）分割前共享模块的最小块数
-    //   minChunks: 6,
-    //   // （缺省值5）按需加载时的最大并行请求数
-    //   maxAsyncRequests: 8,
-    //   // （默认值3）入口点上的最大并行请求数
-    //   maxInitialRequests: 8,
-    //   // webpack 将使用块的起源和名称来生成名称: `vendors~main.js`,如项目与"~"冲突，则可通过此值修改，Eg: '-'
-    //   automaticNameDelimiter: '~',
-    //   name: true,
-    //   // cacheGroups is an object where keys are the cache group names.
-    //   cacheGroups: {
-    //     // 设置为 false 以禁用默认缓存组
-    //     default: false,
-    //     element: {
-    //       test: /node_modules\/element-ui\/(.*)\.js/,
-    //       // test: /node_modules\/(element-ui|lodash)\/(.*)\.js/,
-    //       name: 'element',
-    //       chunks: 'initial',
-    //       // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
-    //       reuseExistingChunk: true,
-    //       priority: -10,
-    //       enforce: true
-    //     },
-    //     vendor: {
-    //       test: /node_modules\/(.*)\.js/,
-    //       name: 'vendor',
-    //       chunks: 'async',
-    //       // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
-    //       priority: -10,
-    //       reuseExistingChunk: true,
-    //       enforce: true
-    //     },
-    //     styles: {
-    //       name: 'styles',
-    //       test: /\.(scss|css)$/,
-    //       chunks: 'all',
-    //       minChunks: 1,
-    //       // 选项 reuseExistingChunk 允许重复使用现有的块，而不是在模块完全匹配时创建新的块
-    //       reuseExistingChunk: true,
-    //       enforce: true
-    //     }
-    //   }
-    // },
+    splitChunks: {
+      // chunks: "initial"，"async"和"all"分别是：初始块，按需块或所有块；
+      chunks: 'async',
+      // （默认值：30000）块的最小大小
+      minSize: 25600,
+      // （默认值：1）分割前共享模块的最小块数
+      minChunks: 1,
+      // （缺省值5）按需加载时的最大并行请求数
+      maxAsyncRequests: 8,
+      // （默认值3）入口点上的最大并行请求数
+      maxInitialRequests: 8,
+      // webpack 将使用块的起源和名称来生成名称: `vendors~main.js`,如项目与"~"冲突，则可通过此值修改，Eg: '-'
+      automaticNameDelimiter: '~',
+      // cacheGroups is an object where keys are the cache group names.
+      name: true,
+      cacheGroups: {
+        // 设置为 false 以禁用默认缓存组
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+        commons: {
+          name: "commons",
+          chunks: "initial",
+          minSize: 0,
+          minChunks: 2,
+          maxInitialRequests: 5
+        },
+        vendors: {
+          name: "vendors",
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all',
+          // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
+          priority: -10
+        }
+      }
+    }
     // runtimeChunk: true, adds an additonal chunk to each entrypoint containing only the runtime.
     // runtimeChunk: {
     //   name: 'manifest'
     // }
-  // },
+  },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({

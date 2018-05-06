@@ -7,15 +7,15 @@ module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
     vendor: [
+      'axios',
       'babel-polyfill',
+      'dayjs',
       'js-cookie',
       'q',
-      'axios',
       'vue/dist/vue.min.js',
       'vue-i18n',
       'vue-router',
-      'vuex',
-      'dayjs'
+      'vuex'
     ]
   },
   output: {
