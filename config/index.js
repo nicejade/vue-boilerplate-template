@@ -1,5 +1,11 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
-var path = require('path')
+const path = require('path')
+
+/*
+  @desc: You can specify a specific path prefix based on your deployment.
+*/
+// const STATIC_PATH = 'https://blog.lovejade.cn/jade/vue-boilerplate-template/'
+const publicPathPrefix = process.env.NODE_ENV === 'production' ? '/' : '/'
 
 module.exports = {
   build: {
@@ -7,7 +13,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: publicPathPrefix,
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.

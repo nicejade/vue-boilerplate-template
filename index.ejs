@@ -24,7 +24,7 @@
     <meta name="msapplication-TileColor" content="#000000">
     <% for (var chunk of webpack.chunks) {
       for (var file of chunk.files) {
-        if (file.match(/\.(js|css)$/)) { %>
+        if (file.match(/\.(css)$/)) { %>
     <link rel="<%= chunk.initial ? 'preload' : 'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
     <% }}} %>
   </head>
@@ -33,11 +33,11 @@
     <noscript>
       This is your fallback content in case JavaScript fails to load.
     </noscript>
-    <div id="app"></div>
+    <div id="root"></div>
     <!-- built files will be auto injected -->
-    <script  src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js"></script>
+    <script src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js?v=0506"></script>
     <!-- Todo: only include in production(@OPEN PWA) -->
-    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- <%= htmlWebpackPlugin.options.serviceWorkerLoader %> -->
     <!-- built files will be auto injected -->
   </body>
   </body>
