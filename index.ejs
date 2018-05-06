@@ -36,6 +36,9 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
     <script  src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js"></script>
+    <!-- Todo: only include in production(@OPEN PWA) -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
   </body>
   </body>
 </html>
