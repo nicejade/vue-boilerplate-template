@@ -12,6 +12,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const loadMinified = require('./load-minified')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 const Jarvis = require('webpack-jarvis')
@@ -142,8 +143,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via splitChunks
       chunksSortMode: 'dependency',
-      serviceWorkerLoader: `<script>${fs.readFileSync(path.join(__dirname,
-        './service-worker-prod.js'), 'utf-8')}</script>`
+      serviceWorkerLoader: `<script type="text/javascript">${loadMinified(path.join(__dirname,
+        './service-worker-prod.js'))}</script>`
     }),
     new AddAssetHtmlPlugin({
       filepath: path.resolve(__dirname, 'dist/*.dll.js')
@@ -156,9 +157,12 @@ const webpackConfig = merge(baseWebpackConfig, {
     //     ignore: ['.*']
     //   }
     // ]),
-    // service worker caching
+    /*
+      @desc: service worker caching, More detailed configuration:
+        https://github.com/goldhand/sw-precache-webpack-plugin
+    */
     new SWPrecacheWebpackPlugin({
-      cacheId: 'my-vue-app',
+      cacheId: 'your-app-name',
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
       minify: true,
