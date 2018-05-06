@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import Vue from 'vue'
+import * as Vue from 'vue/dist/vue.min.js'
 import './global.js'
 import './mixins/globalMixin.js'
 import App from './App'
@@ -20,4 +20,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#root')
