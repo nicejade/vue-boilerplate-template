@@ -36,7 +36,8 @@
     <div id="root"></div>
     <!-- built files will be auto injected -->
     <script src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js?v=0506"></script>
-    <!-- Todo: only include in production(@OPEN PWA) -->
+    <!-- Todo: only include in production(@open serviceWorker) -->
+    <!-- 鉴于 serviceWorker 本身的些许限制，此模版默认不引入此功能；欲打开，取消下面一行注释即可 -->
     <!-- <%= htmlWebpackPlugin.options.serviceWorkerLoader %> -->
     <!-- built files will be auto injected -->
   </body>
