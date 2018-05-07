@@ -15,6 +15,8 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const loadMinified = require('./load-minified')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
+const glob = require('glob')
+const PurifyCSSPlugin = require('purifycss-webpack')
 const Jarvis = require('webpack-jarvis')
 
 const env = process.env.NODE_ENV === 'testing'
@@ -22,6 +24,12 @@ const env = process.env.NODE_ENV === 'testing'
   : config.build.env
 
 const webpackConfig = merge(baseWebpackConfig, {
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: config.build.productionSourceMap,
+      extract: true
+    })
+  },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   // @desc: Documenttion: https://webpack.js.org/configuration/performance/
   performance: {
@@ -106,13 +114,19 @@ const webpackConfig = merge(baseWebpackConfig, {
         },
         compress: {
           warnings: false,
-          drop_console: true
+          drop_console: true,
+          collapse_vars: true,
+          reduce_vars: true
         }
       }
     }),
     // extract css into its own file
     new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
+    }),
+    new PurifyCSSPlugin({
+      // Give paths to parse for rules. These should be absolute!
+      paths: glob.sync(path.join(__dirname, './src/*/*.vue'))
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
