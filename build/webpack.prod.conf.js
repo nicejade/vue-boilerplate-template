@@ -1,4 +1,3 @@
-const fs = require('fs')
 const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
@@ -15,8 +14,6 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const loadMinified = require('./load-minified')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
-const glob = require('glob')
-const PurifyCSSPlugin = require('purifycss-webpack')
 const Jarvis = require('webpack-jarvis')
 
 const env = process.env.NODE_ENV === 'testing'
@@ -77,17 +74,17 @@ const webpackConfig = merge(baseWebpackConfig, {
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true,
+          reuseExistingChunk: true
         },
         commons: {
-          name: "commons",
-          chunks: "initial",
+          name: 'commons',
+          chunks: 'initial',
           minSize: 0,
           minChunks: 2,
           maxInitialRequests: 5
         },
         vendors: {
-          name: "vendors",
+          name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
           // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
@@ -123,10 +120,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     // extract css into its own file
     new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
-    }),
-    new PurifyCSSPlugin({
-      // Give paths to parse for rules. These should be absolute!
-      paths: glob.sync(path.join(__dirname, './src/*/*.vue'))
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
