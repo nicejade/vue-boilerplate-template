@@ -1,6 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 const path = require('path')
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~@CHANGE@~~~~~~~~~~~~~~~~~~~~~~~~ */
 // You can specify a specific path prefix based on your deployment.
 const STATIC_PATH = '/' // Example: 'https://your-domain-name/'
 const publicPathPrefix = process.env.NODE_ENV === 'production' ? STATIC_PATH : '/'
