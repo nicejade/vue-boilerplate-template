@@ -9,7 +9,13 @@
 </div>
 
 <div align="center">
-  <strong>🍎 A Nice Boilerplate Template for creating medium plus Vue.js(2.*)</strong>
+  <strong>
+    🍒(vue webpack vuex vue-router vue-i18n element-ui) out of the box
+  </strong>
+</div>
+
+<div align="center">
+🍎 A Nice Boilerplate Template for creating medium plus Vue.js(2.*)
 </div>
 
 <br>
@@ -85,10 +91,10 @@ run [webpack-jarvis](https://github.com/zouhir/jarvis)(A very intelligent browse
 
 ![JARVIS for Webpack](https://raw.githubusercontent.com/nicejade/vue-boilerplate-template/master/static/img/JARVIS%20for%20Webpack.png)
 
-```
+```bash
 npm run pretest
 ```
-Using nodejs to build the local server, do a simple pre testv for the code after the package.
+Using nodejs to build the local server: http://localhost:3000/ , do a simple pre test for the code after the package.
 
 ```
 npm run analyz
@@ -106,11 +112,11 @@ Webpack plugin and CLI utility that represents bundle content as convenient inte
 - vue-router
 - vuex
 - vue-i18n
-- element-ui
-- bootstrap
 - axios
+- bootstrap
+- element-ui
 - lodash
-- moment
+- ~~moment~~ dayjs
 - js-cookie
 - ~~vuex-persistedstate~~
 - ... ...
@@ -151,18 +157,19 @@ So considerate, Template has been helped to handle the request uniformly, so you
 ## Links
 
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
-- [Nice Links](https://nicelinks.site)
+- [**NICE LINKS**](https://nicelinks.site?from=github)
 - [First Blog](https://jeffjade.com)
 - [Second Blog](https://blog.lovejade.cn/)
 - [Weibo](http://weibo.com/jeffjade)
 - [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
+- [SegmentFault](https://segmentfault.com/u/jeffjade)
 - [JianShu](http://www.jianshu.com/u/9aae3d8f4c3d)
 - [Twitter](https://twitter.com/jeffjade2)
 - [Facebook](https://www.facebook.com/yang.gang.jade)
 
 ## Writing
 
-See the example in the boilerplate template.
+See the example in the boilerplate template. Or An [example](https://github.com/nicejade/nicelinks-vue-client) that has been applied, Online address: https://nicelinks.site.
 
 ## License
 
