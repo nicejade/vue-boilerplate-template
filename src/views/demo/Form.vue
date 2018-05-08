@@ -81,10 +81,13 @@
 </template>
 <script>
 export default {
-  name: 'demo-form',
+  name: 'DemoForm',
+
   components: {},
+
   props: {
   },
+
   data () {
     return {
       ruleForm: {
@@ -123,13 +126,19 @@ export default {
       }
     }
   },
+
   computed: {},
+
   watch: {},
+
   created () {
   },
+
   mounted () {
   },
+
   filters: {},
+
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
