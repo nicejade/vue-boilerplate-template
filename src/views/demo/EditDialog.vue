@@ -1,33 +1,27 @@
 <template>
-  <el-dialog title="编辑" v-model="isVisible" size="tiny" @close="onClose" class="edit-dialog">
+  <el-dialog title="编辑列表" :visible.sync="isVisible" @close="onClose" class="edit-dialog">
     <el-form :model="fillForm" :rules="rules" ref="fillForm">
-      <div class="form-group col-sm-9">
-        <el-form-item label="日期" prop="date">
-          <el-input v-model="fillForm.date"></el-input>
-        </el-form-item>
-      </div>
-
-      <div class="form-group col-sm-9">
-        <el-form-item label="姓名" prop="name">
+      <div class="form-group col-sm-12">
+        <el-form-item :label="$t('demoWorksName')" prop="name">
           <el-input v-model="fillForm.name"></el-input>
         </el-form-item>
       </div>
 
-      <div class="form-group col-sm-9">
-        <el-form-item label="省份" prop="province">
-          <el-input v-model="fillForm.province"></el-input>
-        </el-form-item>
-      </div>
-
-      <div class="form-group col-sm-9">
-        <el-form-item label="地址" prop="address">
+      <div class="form-group col-sm-12">
+        <el-form-item :label="$t('demoOnlineAddress')" prop="address">
           <el-input v-model="fillForm.address"></el-input>
         </el-form-item>
       </div>
 
-      <div class="form-group col-sm-9">
-        <el-form-item label="邮编" prop="zip">
-          <el-input v-model="fillForm.zip"></el-input>
+      <div class="form-group col-sm-12">
+        <el-form-item :label="$t('demoWorksDesc')" prop="description">
+          <el-input v-model="fillForm.description"></el-input>
+        </el-form-item>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <el-form-item :label="$t('demoDateOfline')" prop="date">
+          <el-input v-model="fillForm.date"></el-input>
         </el-form-item>
       </div>
     </el-form>
@@ -47,12 +41,10 @@ export default{
     return {
       isVisible: false,
       fillForm: {
-        date: '',
         name: '',
-        province: '',
-        city: '',
+        description: '',
         address: '',
-        zip: ''
+        date: ''
       },
       rules: {}
     }
@@ -88,12 +80,28 @@ export default{
       this.$emit('input', this.isVisible)
     },
 
+    /* ----------------------------On Click Event---------------------------- */
     onSureClick () {
       this.$refs.fillForm.validate(valid => {
         if (!valid) return
         this.$emit('dispatch-data', JSON.parse(JSON.stringify(this.fillForm)))
         this.isVisible = false
       })
+    }
+  },
+
+  locales: {
+    en: {
+      demoWorksName: 'Works Name',
+      demoOnlineAddress: 'Online Address',
+      demoWorksDesc: 'Works Description',
+      demoDateOfline: 'Date Of Line'
+    },
+    zh: {
+      demoWorksName: '作品名称',
+      demoOnlineAddress: '在线地址',
+      demoWorksDesc: '作品描述',
+      demoDateOfline: '上线日期'
     }
   }
 }
@@ -108,7 +116,8 @@ export default{
     width: 30%;
   }
   .el-input{
-    min-width: 200px;
+    width: 100%;
+    min-width: 260px;
   }
   .el-dialog--tiny{
     min-width: 300px;

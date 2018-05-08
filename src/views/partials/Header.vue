@@ -19,10 +19,10 @@
       </a>
       <el-dropdown-menu slot="dropdown" class="dropmenu">
         <el-dropdown-item  command="Switch">
-          <icon class="icons" name="switch"></icon>{{ $t('switchLang') }}
+          <icon name="switch"></icon>{{ $t('switchLang') }}
         </el-dropdown-item>
         <el-dropdown-item divided command="Logout">
-          <icon class="icons" name="logout"></icon>{{ $t('signOut') }}
+          <icon name="logout"></icon>{{ $t('signOut') }}
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -118,15 +118,6 @@ export default {
     font-size: $font-large;
     color: #fff;
   }
-  .menu {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 15px 10px;
-    width: 60px;
-    height: 60px;
-  }
   .notification {
     float: right;
     padding: 20px;
@@ -166,6 +157,15 @@ export default {
   }
 }
 
+.menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 15px 10px;
+  width: 60px;
+  height: 60px;
+}
 .menu span:after, .menu span:before {
   content: "";
   position: absolute;
@@ -194,6 +194,13 @@ export default {
 }
 .menu-expand .menu span:after {
   transform: rotate(-45deg) translate(4px, -5px);
+}
+
+.dropmenu{
+  .icon{
+    vertical-align: middle;
+    margin: .1rem .5rem .1rem .1rem;
+  }
 }
 
 @media (max-width:768px) {
