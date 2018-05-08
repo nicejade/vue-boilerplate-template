@@ -45,7 +45,7 @@ For how to build medium-sized (+) VUE projects, provide some reference based on 
 
 ## Demo
 
-[Online Demo Page](https://blog.lovejade.cn/jade/vue-boilerplate-template/)
+[Online Demo Page](https://blog.lovejade.cn/vue-boilerplate-template/)
 
 ## Advantage
 - Based on `vue-cli` build， Make more optimization for how to to facilitate the use of vue .
