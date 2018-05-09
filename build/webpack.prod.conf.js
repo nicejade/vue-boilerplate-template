@@ -34,9 +34,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Given an asset is created that is over 250kb；false | "error" | "warning"(Default)
     hints: 'warning',
     // The default value is 250000 (bytes).
-    maxEntrypointSize: 307200, // (300kb)
+    maxEntrypointSize: 500000, // (300kb)
     // This option controls when webpack emits a performance hint based on individual asset size. The default value is 250000 (bytes).
-    maxAssetSize: 307200
+    maxAssetSize: 500000
   },
   output: {
     path: config.build.assetsRoot,
@@ -59,7 +59,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       // chunks: "initial"，"async"和"all"分别是：初始块，按需块或所有块；
       chunks: 'async',
       // （默认值：30000）块的最小大小
-      minSize: 25600,
+      minSize: 30000,
       // （默认值：1）分割前共享模块的最小块数
       minChunks: 1,
       // （缺省值5）按需加载时的最大并行请求数
@@ -77,17 +77,10 @@ const webpackConfig = merge(baseWebpackConfig, {
           priority: -20,
           reuseExistingChunk: true
         },
-        commons: {
-          name: 'commons',
-          chunks: 'initial',
-          minSize: 0,
-          minChunks: 2,
-          maxInitialRequests: 5
-        },
         vendors: {
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all',
+          chunks: 'initial',
           // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
           priority: -10
         }
@@ -174,8 +167,20 @@ const webpackConfig = merge(baseWebpackConfig, {
       @reference: https://webpack.js.org/plugins/min-chunk-size-plugin/
     */
     new webpack.optimize.MinChunkSizePlugin({
-      minChunkSize: 25600 // Minimum number of characters (25kb)
+      minChunkSize: 30000 // Minimum number of characters (25kb)
     }),
+    /*
+      @desc: AggressiveSplittingPlugin 可以将 bundle 拆分成更小的 chunk;
+        直到各个 chunk 的大小达到 option 设置的 maxSize,它通过目录结构将模块组织在一起
+      @reference: https://doc.webpack-china.org/plugins/aggressive-splitting-plugin/
+      @but: 由于 HtmlWebpackPlugin 插件中的错误，此方法在启用时不起作用;
+        具体可参见：https://github.com/jantimon/html-webpack-plugin/issues/446
+    /*
+    new webpack.optimize.AggressiveSplittingPlugin({
+      minSize: 10000,
+      maxSize: 500000
+    }),
+    */
     /*
       @desc: 编译之后，您可能会注意到某些块太小 - 创建更大的HTTP开销，那么您可以处理像这样；
       @reference: https://webpack.js.org/plugins/limit-chunk-count-plugin/
