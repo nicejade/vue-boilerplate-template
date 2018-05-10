@@ -209,7 +209,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // 在编译出现错误时，使用 NoEmitOnErrorsPlugin 来跳过输出阶段;
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+
+    /*
+      @desc: 提升代码在浏览器中的执行速度: 作用域提升(scope hoisting)；
+      @reference: https://doc.webpack-china.org/plugins/module-concatenation-plugin/
+    */
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 })
 
