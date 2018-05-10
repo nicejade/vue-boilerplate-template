@@ -42,7 +42,8 @@ function createHappyPlugin (id, loaders) {
 module.exports = {
   entry: {
     app: './src/main.js',
-    vendors: ['lodash']
+    lodash: ['lodash'],
+    element: ['element-ui']
   },
   mode: env === 'production' ? 'production' : 'development',
   output: {
@@ -104,7 +105,10 @@ module.exports = {
       {
         test: /\.css$/,
         include: [path.resolve('src')],
-        use: ['css-hot-loader', 'style-loader', 'css-loader', 'postcss-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       {
         test: /\.svg$/,
