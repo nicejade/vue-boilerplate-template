@@ -3,7 +3,7 @@ require('./check-versions')()
 require('shelljs/global')
 
 env.NODE_ENV = process.env.NODE_ENV || 'production'
-
+console.log('xxxx')
 var ora = require('ora')
 var path = require('path')
 var chalk = require('chalk')
