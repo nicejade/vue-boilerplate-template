@@ -3,7 +3,7 @@
 <h1 align="center"><strong>Vue Boilerplate Template</strong></h1>
 
 <div align="center">
-  <a href="https://twitter.com/intent/tweet?text=Cool:&url=https://github.com/nicejade/vue-boilerplate-template">
+   <a href="https://twitter.com/intent/tweet?text=Cool:&url=https://github.com/nicejade/vue-boilerplate-template">
     <img src="https://img.shields.io/twitter/url/https://github.com/nicejade/vue-boilerplate-template/blob/master/assets/images/logo.svg?style=for-the-badge" alt="twitter">
   </a>
 </div>
@@ -15,7 +15,7 @@
 </div>
 
 <div align="center">
-🍎 A Nice Boilerplate Template for creating medium plus Vue.js(2.*)
+🍎 Nice Boilerplate Template for creating medium plus Vue.js(2.*) project
 </div>
 
 <br>
@@ -33,6 +33,12 @@
   <a href="https://spectrum.chat/nice-links">
     <img src="https://img.shields.io/badge/chat-on%20%20spectrum-green.svg" alt="Chat">
   </a>
+</div>
+
+<div align="center">
+  <strong>
+    <a rel="noreferrer noopener" target="_blank" href="https://jeffjade.com/2018/05/20/140-vue-webpack-boilerplate-template/">中文 WIKI</a>
+  </strong>
 </div>
 
 ## Goal and Philosophy
@@ -143,7 +149,7 @@ let params = {
   // Interface required parameters
 }
 this.isLoading = true
-this.$apis.getProfile(params).then(result => {
+this.$apis.moduleName.getProfile(params).then(result => {
   // Handle the correct data you received
   this.$message({
     message: result,
