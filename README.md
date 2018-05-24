@@ -35,6 +35,8 @@
   </a>
 </div>
 
+<br>
+
 <div align="center">
   <strong>
     <a rel="noreferrer noopener" target="_blank" href="https://jeffjade.com/2018/05/20/140-vue-webpack-boilerplate-template/">中文 WIKI</a>
