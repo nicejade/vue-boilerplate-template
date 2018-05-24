@@ -13,7 +13,6 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const loadMinified = require('./load-minified')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
-const BabiliWebpackPlugin = require('babili-webpack-plugin')
 const Jarvis = require('webpack-jarvis')
 
 const env = process.env.NODE_ENV === 'testing'
@@ -91,10 +90,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSAssetsPlugin({}),
-
-    // A Webpack Plugin for Babili - A babel based minifier
-    // https://www.npmjs.com/package/babili-webpack-plugin
-    new BabiliWebpackPlugin(),
 
     // @desc:  Documentation：https://www.webpackjs.com/plugins/split-chunks-plugin/
     new webpack.optimize.SplitChunksPlugin({
