@@ -74,7 +74,7 @@ npm install (npm i / yarn)
 npm start / npm run dev / yarn run dev
 ```
 
-Go to http://localhost:8080/. If port 8080 is already in use on your machine you must change the port number in `/config/index.js`. Otherwise npm run dev will fail. Of course, you can temporarily replace the port using the following command:
+Go to http://localhost:8080/. If port 8080 is already in use on your machine, **the program will specify the available port (incremental) for you, for example, `8081`**. Of course, you can temporarily replace the port using the following command:
 
 ```
 PORT=8888 npm run dev
