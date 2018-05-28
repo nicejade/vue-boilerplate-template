@@ -5,7 +5,6 @@ if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
-const opn = require('opn')
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
@@ -73,16 +72,14 @@ module.exports = portfinder.getPortPromise().then(port => {
   const urls = utils.prepareUrls('http', '0.0.0.0', port)
 
   devMiddleware.waitUntilValid(function () {
-    console.log(`> Listening at: ${chalk.cyan(urls.localUrlForTerminal)} \n`)
+    console.log()
+    console.log([
+      `  App running at:`,
+      `  - Local:   ${chalk.cyan(urls.localUrlForTerminal)}`,
+      `  - Network: ${chalk.cyan(urls.lanUrlForTerminal)}`
+    ].join('\n'))
+    console.log()
   })
-
-  console.log()
-  console.log([
-    `  App running at:`,
-    `  - Local:   ${chalk.cyan(urls.localUrlForTerminal)}`,
-    `  - Network: ${chalk.cyan(urls.lanUrlForTerminal)}`
-  ].join('\n'))
-  console.log(urls)
 
   app.listen(port, function (err) {
     if (err) {
@@ -92,7 +89,7 @@ module.exports = portfinder.getPortPromise().then(port => {
 
     // when env is testing, don't need open it
     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-      opn(urls.localUrlForBrowser)
+      utils.startBrowserProcess(urls.localUrlForBrowser)
     }
   })
 }).catch(err => {
