@@ -30,6 +30,9 @@
   <a href="https://github.com/nicejade/vue-boilerplate-template">
     <img src="https://img.shields.io/github/license/nicejade/vue-boilerplate-template.svg" alt="LICENSE">
   </a>
+  <a href="https://hacpai.com/article/1527681795228">
+    <img src="https://img.shields.io/badge/chat-hacpai-brightgreen.svg" alt="Chat">
+  </a>
   <a href="https://spectrum.chat/nice-links">
     <img src="https://img.shields.io/badge/chat-on%20%20spectrum-green.svg" alt="Chat">
   </a>
@@ -74,7 +77,7 @@ npm install (npm i / yarn)
 npm start / npm run dev / yarn run dev
 ```
 
-Go to http://localhost:8080/. If port 8080 is already in use on your machine, **the program will specify the available port (incremental) for you, for example, `8081`**. Of course, you can temporarily replace the port using the following command:
+Go to http://localhost:8080/. If port 8080 is already in use on your machine, **the program will specify the available port (incremental) for you, for example, `8081` / `8082` ...**. Of course, you can temporarily replace the port using the following command:
 
 ```
 PORT=8888 npm run dev
@@ -130,7 +133,6 @@ Webpack plugin and CLI utility that represents bundle content as convenient inte
 - lodash
 - ~~moment~~ dayjs
 - js-cookie
-- ~~vuex-persistedstate~~
 - ... ...
 
 ## Operation request
@@ -153,10 +155,6 @@ let params = {
 this.isLoading = true
 this.$apis.moduleName.getProfile(params).then(result => {
   // Handle the correct data you received
-  this.$message({
-    message: result,
-    type: 'success'
-  })
 }).catch(error => {
   this.$message.error(`Error: ${error}`)
 }).fin(() => {
@@ -170,6 +168,7 @@ So considerate, Template has been helped to handle the request uniformly, so you
 
 - [Example](https://github.com/nicejade/nicelinks-vue-client)
 - [**NICE LINKS**](https://nicelinks.site?from=github)
+- [About Me](https://about.me/nicejade/)
 - [First Blog](https://jeffjade.com)
 - [Second Blog](https://blog.lovejade.cn/)
 - [Weibo](http://weibo.com/jeffjade)
@@ -187,4 +186,4 @@ See the example in the boilerplate template. Or An [example](https://github.com/
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2017-present, NiceJade.
+Copyright (c) 2017-present, [nicejade](https://about.me/nicejade/).
