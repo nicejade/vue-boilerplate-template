@@ -85,10 +85,22 @@ export default {
         date: '2014-09-20'
       },
       {
+        name: '静晴轩别苑',
+        address: 'https://nice.lovejade.cn/',
+        description: '繁华尽处，寻一无人山谷，建一木制小屋，铺一青石小路，与你晨钟暮鼓，安之若素。',
+        date: '2018-05-26'
+      },
+      {
         name: '天意人间舫',
         address: 'https://blog.lovejade.cn/',
         description: '辅助主博客——<a href="https://jeffjade.com">晚晴幽草轩</a>の华丽存在',
         date: '2016-01-20'
+      },
+      {
+        name: 'Awesome Vue-Cli3 Example',
+        address: 'https://vue-cli3.lovejade.cn/',
+        description: 'Awesome example for rapid Vue.js development using vue-cli3.',
+        date: '2018-06-01'
       }],
       isDialogVisible: false,
       currentPage: 1,
