@@ -1,21 +1,28 @@
 /*
   @date: 2017-08-01
-  @lastModify: 2018-05-16
-  @desc: Modular Lodash builds without the hassle. You can freely add the method you need
-  @detail:
-    https://www.npmjs.com/package/lodash-webpack-plugin
-    https://www.npmjs.com/package/babel-plugin-lodash
+  @lastModify: 2018-06-14
+  @desc: A modern JavaScript utility library delivering modularity, performance, & extras.
+  @detail: https://github.com/lodash/lodash
 */
-import _ from 'lodash'
+
+import clone from 'lodash/clone'
+import cloneDeep from 'lodash/cloneDeep'
+import endsWith from 'lodash/endsWith'
+import debounce from 'lodash/debounce'
+import throttle from 'lodash/throttle'
+import find from 'lodash/find'
+import isEmpty from 'lodash/isEmpty'
+import flatten from 'lodash/flatten'
+import flattenDepth from 'lodash/flattenDepth'
 
 export default {
-  clone: _.clone,
-  cloneDeep: _.cloneDeep,
-  endsWith: _.endsWith,
-  debounce: _.debounce,
-  throttle: _.throttle,
-  find: _.find,
-  isEmpty: _.isEmpty,
-  flatten: _.flatten,
-  flattenDepth: _.flattenDepth
+  clone,
+  cloneDeep,
+  endsWith,
+  debounce,
+  throttle,
+  find,
+  isEmpty,
+  flatten,
+  flattenDepth
 }

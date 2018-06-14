@@ -11,7 +11,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const loadMinified = require('./load-minified')
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 const Jarvis = require('webpack-jarvis')
 
@@ -116,13 +115,6 @@ const webpackConfig = merge(baseWebpackConfig, {
           chunks: 'initial',
           // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
           priority: -10
-        },
-        lodash: {
-          name: 'lodash',
-          test: /[\\/]node_modules[\\/]lodash[\\/]/,
-          chunks: 'initial',
-          // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
-          priority: -10
         }
       }
     }),
@@ -173,7 +165,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       stripPrefix: 'dist/'
     }),
 
-    new LodashModuleReplacementPlugin(),
     /*
       @desc: limit minChunkSize through MinChunkSizePlugin
       @reference: https://webpack.js.org/plugins/min-chunk-size-plugin/
