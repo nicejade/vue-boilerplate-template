@@ -1,15 +1,10 @@
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
-import Filters from './filters'
-import ElementUI from 'element-ui'
-import Cookies from 'js-cookie'
-import _ from '@helper/lodash.js'
-import locales from './locales'
-import Icon from '@components/Icon/index.js'
-import { $apis, $utils, $document, $auth } from '@helper'
 
+/* -------------------------Init Multi-language------------------------------ */
+import VueI18n from 'vue-i18n'
+import Cookies from 'js-cookie'
+import locales from './locales'
 Vue.use(VueI18n)
-Vue.use(ElementUI)
 
 /* inject i18n */
 const browserLanguage = (window.navigator.language || window.navigator.browserLanguage).split('-')[0]
@@ -20,14 +15,27 @@ Object.keys(locales).forEach(lang => {
   Vue.locale(lang, locales[lang])
 })
 
-for (let key in Filters) {
-  Vue.filter(key, Filters[key])
-}
 
-Vue.component('icon', Icon)
+/* ------------------------Vue Global Variable------------------------------ */
+import { $apis, $utils, $document, $auth, $lodash } from '@helper'
 
-Vue.prototype.$_ = _
+Vue.prototype.$_ = $lodash
 Vue.prototype.$apis = $apis
 Vue.prototype.$utils = $utils
 Vue.prototype.$auth = $auth
 Vue.prototype.$document = $document
+
+import Filters from './filters'
+for (let key in Filters) {
+  Vue.filter(key, Filters[key])
+}
+
+/* ------------------------Vue Global Components------------------------------ */
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
+import Icon from '@components/Icon/index.js'
+Vue.component('icon', Icon)
+

@@ -1,10 +1,10 @@
 <template>
   <header class="header">
     <h1 class="logo">
-      <a href="javascript:;">
+      <router-link to="/">
         <img src="../../assets/images/logo.png" alt="vue-boilerplate-template">
         <span class="title">{{ $t('projectTitle') }}</span>
-      </a>
+      </router-link>
     </h1>
 
     <a href="javascript:;" class="menu" @click="onToggleMenuClick" >
@@ -14,7 +14,7 @@
     <el-dropdown @command="handleCommand" class="operate" trigger="click">
       <a href="javascript:;" class="account">
         <icon name="account"></icon>
-        <span>{{ user.username }}</span>
+        <span>{{ user.username || $t('username')}}</span>
         <span class="caret"></span>
       </a>
       <el-dropdown-menu slot="dropdown" class="dropmenu">
@@ -129,30 +129,26 @@ export default {
   .operate {
     float: right;
     position: relative;
+    margin-right: 15px;
     &:hover {
       .dropmenu {
         display: block;
         width: 100%;
         min-width: 150px !important;
       }
-      > a {
+      .account {
         background-color: $header-bg;
       }
     }
-    > a {
-      display: inline-block;
-      padding: 20px;
+    .account {
+      height: $header-height;
+      @include flex-box-center(row);
       color: #fff;
     }
-    .active {
-      background-color: $header-bg;
-    }
-    .avatar {
-      display: inline-block;
-      vertical-align: middle;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+    .icon-account{
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
     }
   }
 }

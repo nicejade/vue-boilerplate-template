@@ -13,7 +13,7 @@ export default [
   },
   {
     path: '/',
-    redirect: '/demo/form'
+    redirect: '/demo/list'
   },
   {
     path: '*',

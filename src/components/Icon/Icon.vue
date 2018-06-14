@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       Icons: Icons,
-      iconClass: `icon${this.name}`
+      iconClass: `icon-${this.name}`
     }
   }
 }

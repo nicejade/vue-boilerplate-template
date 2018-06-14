@@ -60,15 +60,20 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin flex-box-center(){
+@mixin flex-box-center($direction: row, $justify: center, $align-items: center){
+  flex-direction: $direction;
   display: -webkit-box;
   display: -moz-box;
-  display: -webkit-flex; display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
   -webkit-box-align: center;
   -moz-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+  -ms-box-align: center;
+  -webkit-align-items: $align-items;
+  -ms-align-items: $align-items;
+  align-items: $align-items;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  justify-content: center;
+  justify-content: $justify;
 }
