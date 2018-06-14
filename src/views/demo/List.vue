@@ -6,10 +6,10 @@
     <div class="module-content">
       <div class="panel panel-default">
         <div class="panel-body">
-          <el-table :data="tableData" border>
+          <el-table :data="tableData" border stripe highlight-current-row>
             <el-table-column prop="name" :label="$t('demoWorksName')" width="150">
             </el-table-column>
-            <el-table-column prop="address" :label="$t('demoOnlineAddress')" width="200">
+            <el-table-column prop="address" :label="$t('demoOnlineAddress')" width="220">
               <template slot-scope="scope">
                 <a :href="scope.row.address"
                   target="_blank" rel="noreferrer noopener">
@@ -27,16 +27,17 @@
             </el-table-column>
             <el-table-column :label="$t('operation')" width="180">
               <template slot-scope="scope">
-                <el-button
-                  type="primary" size="medium"
-                  @click="onEditClick(scope.row, scope.$index)">
-                  {{ $t('edit') }}
-                </el-button>
-                <el-button
-                  type="success" size="medium"
-                  @click="onHeartClick(scope.row, scope.$index)">
-                  <span class="heart"></span>
-                </el-button>
+                <div class="operation-area">
+                  <el-button
+                    type="primary" size="medium"
+                    @click="onEditClick(scope.row, scope.$index)">
+                    {{ $t('edit') }}
+                  </el-button>
+                  <a :href="scope.row.address" class="heart-link"
+                    target="_blank" rel="noreferrer noopener">
+                    <span class="heart"></span>
+                  </a>
+                </div>
               </template>
             </el-table-column>
           </el-table>
@@ -97,9 +98,9 @@ export default {
         date: '2016-01-20'
       },
       {
-        name: 'Awesome Vue-Cli3 Example',
+        name: 'Vue-Cli3 实践参考',
         address: 'https://vue-cli3.lovejade.cn/',
-        description: 'Awesome example for rapid Vue.js development using vue-cli3.',
+        description: 'Awesome example for rapid Vue.js development using vue-cli3. (vue webpack vuex vue-router vue-i18n element-ui) out of the box.',
         date: '2018-06-01'
       }],
       isDialogVisible: false,
@@ -145,10 +146,6 @@ export default {
       this.currentRowData = rowData
       this.currentRowIndex = index
       this.isDialogVisible = true
-    },
-
-    onHeartClick (rowData) {
-      window.open(rowData.address)
     }
   },
 
@@ -170,9 +167,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import './../../assets/scss/variables.scss';
+@import './../../assets/scss/mixins.scss';
+
 .module-content{
   .table-operate{
     margin-top: 15px;
+  }
+  .operation-area{
+    @include flex-box-center(row);
   }
 
   .heart {
@@ -207,6 +210,14 @@ export default {
     background: #f05b72;
     transform: rotateZ(45deg);
     transform-origin: 100% 100% 0;
+  }
+  .heart-link{
+    display: inline-block;
+    margin-left: 15px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: $brand;
+    vertical-align: top;
   }
 }
 </style>

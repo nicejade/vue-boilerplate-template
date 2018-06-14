@@ -6,7 +6,7 @@ export default {
 
     signIn: '登录',
     signUp: '注册',
-    signOut: '注销',
+    signOut: '退出登录',
     username: '用户名',
     password: '密码',
 
