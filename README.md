@@ -22,7 +22,7 @@
 
 <div align="center">
   <a href="https://circleci.com/gh/nicejade/vue-boilerplate-template">
-    <img src="https://img.shields.io/circleci/project/nicejade/vue-boilerplate-template.svg" alt="Build Status">
+    <img src="https://circleci.com/gh/nicejade/vue-boilerplate-template/tree/master.svg?style=svg" alt="Build Status">
   </a>
   <a href="https://nodejs.org/en/">
     <img src="https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg" alt="NodeJs">
@@ -33,9 +33,10 @@
   <a href="https://hacpai.com/article/1527681795228">
     <img src="https://img.shields.io/badge/chat-hacpai-brightgreen.svg" alt="Chat">
   </a>
-  <a href="https://spectrum.chat/nice-links">
+  <a href="https://nice.lovejade.cn/zh/article/vue-webpack-boilerplate-template.html">
     <img src="https://img.shields.io/badge/chat-on%20%20spectrum-green.svg" alt="Chat">
   </a>
+  <a href="https://about.me/nicejade"><img src="https://img.shields.io/badge/Author-nicejade-%23a696c8.svg" alt="Author nicejade"></a>
 </div>
 
 <br>
@@ -48,7 +49,7 @@
 
 ## Goal and Philosophy
 
-For how to build medium-sized (+) VUE projects, provide some reference based on past experience.
+For how to build medium-sized (+) **VUE** projects, provide some reference based on past experience. **The latest Vue Boilerplate based on `vue-cli3` has been open source: [awesome-vue-cli3-example](https://github.com/nicejade/awesome-vue-cli3-example), If you pay attention to it, I believe it is very worthwhile** 🎉.
 
 ## Prerequisites
 
