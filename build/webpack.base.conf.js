@@ -10,6 +10,7 @@ const HappyPack = require('happypack')
 const os = require('os')
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 const env = process.env.NODE_ENV
 
@@ -175,6 +176,7 @@ module.exports = {
         }
       }]
     }),
+    new HardSourceWebpackPlugin(),
     new webpack.LoaderOptionsPlugin({ options: {} })
   ]
 }
