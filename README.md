@@ -25,7 +25,7 @@
     <img src="https://circleci.com/gh/nicejade/vue-boilerplate-template/tree/master.svg?style=svg" alt="Build Status">
   </a>
   <a href="https://nodejs.org/en/">
-    <img src="https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg" alt="NodeJs">
+    <img src="https://img.shields.io/badge/node-%3E%3D%208.0.0-green.svg" alt="node version">
   </a>
   <a href="https://github.com/nicejade/vue-boilerplate-template">
     <img src="https://img.shields.io/github/license/nicejade/vue-boilerplate-template.svg" alt="LICENSE">
