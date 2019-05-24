@@ -103,7 +103,7 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "4.8.1",
     "webpack-build-notifier": "^0.1.13",
-    "webpack-bundle-analyzer": "^2.2.1",
+    "webpack-bundle-analyzer": "3.3.2",
     "webpack-dev-middleware": "^3.1.3",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-jarvis": "^0.3.2",
